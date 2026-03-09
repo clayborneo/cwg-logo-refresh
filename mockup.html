@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caring with Grace — Palette Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Default: Palette A */
+      --primary: #4A9EA8;
+      --primary-light: #F0F7F8;
+      --primary-dark: #357680;
+      --secondary: #D4899E;
+      --secondary-light: #F5E0E6;
+      --dark: #2C3E50;
+      --light: #F0F7F8;
+      --accent-light: #E8F4F6;
+      --white: #FFFFFF;
+      --text: #2C3E50;
+      --text-light: #5A6C7E;
+      --border: #D8E8EB;
+      --heading-font: 'Playfair Display', Georgia, serif;
+      --body-font: 'Open Sans', Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--body-font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --- Palette Switcher Bar --- */
+    .switcher-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #1A1A1A;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .switcher-label {
+      color: #AAA;
+      font-size: 0.82rem;
+      margin-right: 8px;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .switcher-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      background: #2A2A2A;
+      color: #CCC;
+      font-size: 0.8rem;
+      font-family: 'Open Sans', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .switcher-btn:hover { background: #333; color: #FFF; }
+    .switcher-btn.active { border-color: #FFF; color: #FFF; background: #333; }
+    .switcher-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .back-link {
+      position: absolute;
+      left: 24px;
+      color: #888;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .back-link:hover { color: #FFF; }
+
+    /* --- Site Header --- */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .site-logo-text {
+      font-family: var(--heading-font);
+      font-size: 1.4rem;
+      color: var(--text);
+    }
+    .site-nav { display: flex; gap: 28px; list-style: none; }
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .site-nav a:hover { color: var(--primary); }
+
+    /* --- Hero --- */
+    .hero {
+      background: var(--primary-light);
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: var(--heading-font);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 16px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      max-width: 560px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: var(--body-font);
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .hero-btn:hover { background: var(--primary-dark); }
+
+    /* --- Services --- */
+    .services {
+      padding: 72px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .services h2 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .services > p {
+      text-align: center;
+      color: var(--text-light);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .service-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .service-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .service-icon svg { width: 24px; height: 24px; }
+    .service-card h3 {
+      font-family: var(--heading-font);
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* --- About / Feature --- */
+    .about-section {
+      background: var(--white);
+      padding: 72px 40px;
+    }
+    .about-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    .about-image {
+      background: var(--primary-light);
+      border-radius: 16px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    /* --- Quote / Testimonial --- */
+    .quote-section {
+      background: var(--primary);
+      padding: 64px 40px;
+      text-align: center;
+    }
+    .quote-section blockquote {
+      font-family: var(--heading-font);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--white);
+      max-width: 680px;
+      margin: 0 auto 16px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .quote-section cite {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      font-style: normal;
+      font-family: var(--body-font);
+    }
+
+    /* --- CTA Band --- */
+    .cta-band {
+      background: var(--secondary-light);
+      padding: 56px 40px;
+      text-align: center;
+    }
+    .cta-band h2 {
+      font-family: var(--heading-font);
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .cta-band p {
+      color: var(--text-light);
+      margin-bottom: 24px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--secondary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: var(--body-font);
+      font-weight: 600;
+    }
+
+    /* --- Footer --- */
+    .site-footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 40px 32px;
+    }
+    .footer-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand h3 {
+      font-family: var(--heading-font);
+      color: rgba(255,255,255,0.9);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; }
+    .footer-col h4 {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+    .footer-col a:hover { color: rgba(255,255,255,0.9); }
+    .footer-bottom {
+      max-width: 1000px;
+      margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* --- Palette swatch preview in header --- */
+    .header-accent {
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
+
+    @media (max-width: 768px) {
+      .site-header { padding: 0 20px; }
+      .site-nav { display: none; }
+      .hero { padding: 48px 20px; }
+      .hero h1 { font-size: 1.8rem; }
+      .services { padding: 48px 20px; }
+      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .back-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ======================== PALETTE SWITCHER ======================== -->
+<div class="switcher-bar">
+  <a href="index.html" class="back-link">&larr; Back to exploration</a>
+  <span class="switcher-label">Switch palette:</span>
+  <button class="switcher-btn active" onclick="setPalette('a')">
+    <span class="switcher-dot" style="background: #4A9EA8;"></span> A. Teal & Blush
+  </button>
+  <button class="switcher-btn" onclick="setPalette('b')">
+    <span class="switcher-dot" style="background: #C17C8E;"></span> B. Rose & Gold
+  </button>
+  <button class="switcher-btn" onclick="setPalette('c')">
+    <span class="switcher-dot" style="background: #7A9E7E;"></span> C. Sage & Rose
+  </button>
+  <button class="switcher-btn" onclick="setPalette('d')">
+    <span class="switcher-dot" style="background: #4A6885;"></span> D. Navy & Coral
+  </button>
+  <button class="switcher-btn" onclick="setPalette('e')">
+    <span class="switcher-dot" style="background: #7B5E7B;"></span> E. Plum & Honey
+  </button>
+</div>
+
+<!-- ======================== ACCENT STRIP ======================== -->
+<div class="header-accent"></div>
+
+<!-- ======================== SITE HEADER ======================== -->
+<header class="site-header">
+  <div class="site-logo">
+    <!-- Inline butterfly icon -->
+    <svg viewBox="0 0 40 40" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+      <g transform="rotate(-18, 20, 20) scale(0.38) translate(3, 5)">
+        <path d="M 46 38 C 38 26, 24 10, 10 5 C 4 3, 0 7, 1 15 C 2 24, 10 33, 22 39 C 32 43, 42 42, 46 40 Z" fill="var(--primary)" opacity="0.85"/>
+        <path d="M 54 38 C 62 26, 76 10, 90 5 C 96 3, 100 7, 99 15 C 98 24, 90 33, 78 39 C 68 43, 58 42, 54 40 Z" fill="var(--primary)" opacity="0.85"/>
+        <path d="M 46 44 C 38 50, 24 62, 16 72 C 12 77, 13 82, 18 83 C 23 84, 29 80, 35 72 C 40 64, 44 52, 46 46 Z" fill="var(--secondary)" opacity="0.75"/>
+        <path d="M 54 44 C 62 50, 76 62, 84 72 C 88 77, 87 82, 82 83 C 77 84, 71 80, 65 72 C 60 64, 56 52, 54 46 Z" fill="var(--secondary)" opacity="0.75"/>
+        <ellipse cx="50" cy="44" rx="2.5" ry="14" fill="var(--dark)"/>
+      </g>
+    </svg>
+    <span class="site-logo-text">Caring with Grace</span>
+  </div>
+  <ul class="site-nav">
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Aging Life Care</a></li>
+    <li><a href="#">Caregiving</a></li>
+    <li><a href="#">Resources</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#" style="color: var(--primary); font-weight: 600;">Contact</a></li>
+  </ul>
+</header>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero">
+  <h1>Helping those you love live with dignity</h1>
+  <p>Caring with Grace provides compassionate, personalized aging life care management for families in the Dallas-Fort Worth area. Since 2006.</p>
+  <a href="#" class="hero-btn">Schedule a Consultation</a>
+</section>
+
+<!-- ======================== SERVICES ======================== -->
+<section class="services">
+  <h2>How We Help</h2>
+  <p>Comprehensive care management tailored to your family's unique needs.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3>Aging Life Care</h3>
+      <p>Holistic, client-centered approach to caring for older adults facing ongoing health challenges.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>Housing Guidance</h3>
+      <p>Evaluate and select appropriate housing or residential options for your loved one.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <h3>Medical Advocacy</h3>
+      <p>Attend appointments and facilitate communication between doctor, client, and family.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Family Support</h3>
+      <p>Expert guidance to ease the burdens and challenges of caregiving for your entire family.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== ABOUT ======================== -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>Compassionate Care Since 2006</h2>
+      <p>Caring with Grace was founded in Dallas to assist seniors, adults with disabilities, and their families as they navigate the challenges of aging.</p>
+      <p>Our care managers bring extensive experience with Alzheimer's, Parkinson's, Frontotemporal Dementia, and other neurocognitive conditions. We work alongside your family to provide expertise during times of uncertainty.</p>
+      <p style="margin-top: 8px;">
+        <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Learn more about our team &rarr;</a>
+      </p>
+    </div>
+    <div class="about-image">
+      [ Photo placeholder ]
+    </div>
+  </div>
+</section>
+
+<!-- ======================== QUOTE ======================== -->
+<section class="quote-section">
+  <blockquote>"They guided our family through one of the most difficult times of our lives with patience, expertise, and genuine compassion."</blockquote>
+  <cite>— A Dallas-area family</cite>
+</section>
+
+<!-- ======================== CTA ======================== -->
+<section class="cta-band">
+  <h2>Ready to talk?</h2>
+  <p>We're here to help your family find the right path forward. Reach out for a free initial consultation.</p>
+  <a href="#" class="cta-btn">Contact Us</a>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Caring with Grace</h3>
+      <p>Aging Life Care Professionals serving the Dallas-Fort Worth area. Helping those you love live with dignity.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Aging Life Care</a></li>
+        <li><a href="#">Caregiving</a></li>
+        <li><a href="#">Senior Drivers</a></li>
+        <li><a href="#">Mental Health</a></li>
+        <li><a href="#">Alzheimer's</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Caring with Grace. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const palettes = {
+  a: {
+    name: 'Teal & Blush',
+    primary: '#4A9EA8',
+    primaryLight: '#F0F7F8',
+    primaryDark: '#357680',
+    secondary: '#D4899E',
+    secondaryLight: '#F5E0E6',
+    dark: '#2C3E50',
+    light: '#F0F7F8',
+    text: '#2C3E50',
+    textLight: '#5A6C7E',
+    border: '#D8E8EB',
+    headingFont: "'Playfair Display', Georgia, serif",
+    bodyFont: "'Open Sans', Arial, sans-serif"
+  },
+  b: {
+    name: 'Rose & Gold',
+    primary: '#C17C8E',
+    primaryLight: '#FDF6F0',
+    primaryDark: '#9E5A6C',
+    secondary: '#C9A96E',
+    secondaryLight: '#F8F0E4',
+    dark: '#3A2524',
+    light: '#FDF6F0',
+    text: '#3A2524',
+    textLight: '#6B4F4E',
+    border: '#E8D8D4',
+    headingFont: "'DM Serif Display', Georgia, serif",
+    bodyFont: "'DM Sans', Helvetica, sans-serif"
+  },
+  c: {
+    name: 'Sage & Dusty Rose',
+    primary: '#7A9E7E',
+    primaryLight: '#F5F2ED',
+    primaryDark: '#5A7E5E',
+    secondary: '#CB8E8E',
+    secondaryLight: '#F5E8E8',
+    dark: '#2B3A2E',
+    light: '#F5F2ED',
+    text: '#2B3A2E',
+    textLight: '#5A6B5D',
+    border: '#D8DDD4',
+    headingFont: "'Cormorant Garamond', Garamond, serif",
+    bodyFont: "'Lato', Arial, sans-serif"
+  },
+  d: {
+    name: 'Navy & Coral',
+    primary: '#4A6885',
+    primaryLight: '#F5F7FA',
+    primaryDark: '#36506B',
+    secondary: '#E08B6D',
+    secondaryLight: '#FBF0EB',
+    dark: '#1E2D3D',
+    light: '#F5F7FA',
+    text: '#1E2D3D',
+    textLight: '#4A5B6B',
+    border: '#D4DEE6',
+    headingFont: "'Playfair Display', Georgia, serif",
+    bodyFont: "'Open Sans', Arial, sans-serif"
+  },
+  e: {
+    name: 'Plum & Honey',
+    primary: '#7B5E7B',
+    primaryLight: '#F8F4F8',
+    primaryDark: '#5E3E5E',
+    secondary: '#D4A853',
+    secondaryLight: '#F8F2E6',
+    dark: '#2E1E2E',
+    light: '#F8F4F8',
+    text: '#2E1E2E',
+    textLight: '#5E4A5E',
+    border: '#DDD4DD',
+    headingFont: "'Nunito', Verdana, sans-serif",
+    bodyFont: "'Nunito', Verdana, sans-serif"
+  }
+};
+
+function setPalette(key) {
+  const p = palettes[key];
+  const r = document.documentElement.style;
+  r.setProperty('--primary', p.primary);
+  r.setProperty('--primary-light', p.primaryLight);
+  r.setProperty('--primary-dark', p.primaryDark);
+  r.setProperty('--secondary', p.secondary);
+  r.setProperty('--secondary-light', p.secondaryLight);
+  r.setProperty('--dark', p.dark);
+  r.setProperty('--light', p.light);
+  r.setProperty('--text', p.text);
+  r.setProperty('--text-light', p.textLight);
+  r.setProperty('--border', p.border);
+  r.setProperty('--heading-font', p.headingFont);
+  r.setProperty('--body-font', p.bodyFont);
+  document.body.style.fontFamily = p.bodyFont;
+
+  // Update heading fonts
+  document.querySelectorAll('.hero h1, .services h2, .about-text h2, .quote-section blockquote, .cta-band h2, .footer-brand h3, .site-logo-text, .service-card h3').forEach(el => {
+    el.style.fontFamily = p.headingFont;
+  });
+
+  // Update body fonts
+  document.querySelectorAll('.hero p, .services > p, .service-card p, .about-text p, .quote-section cite, .cta-band p, .site-nav a, .hero-btn, .cta-btn').forEach(el => {
+    el.style.fontFamily = p.bodyFont;
+  });
+
+  // Update active button
+  document.querySelectorAll('.switcher-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.closest('.switcher-btn').classList.add('active');
+}
+</script>
+</body>
+</html>

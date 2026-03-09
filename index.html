@@ -1,530 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caring With Grace - Logo Refresh Preview</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #f5f5f5;
-    color: #1a1a1a;
-    padding: 40px 20px;
-    line-height: 1.6;
-  }
-  .container { max-width: 1200px; margin: 0 auto; }
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-    color: #1a1a1a;
-  }
-  .subtitle {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 40px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caring with Grace — Brand Exploration v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --page-bg: #FAFAFA;
+      --card-bg: #FFFFFF;
+      --text: #1A1A1A;
+      --text-light: #666;
+      --border: #E8E8E8;
+      --section-gap: 80px;
+    }
+    body {
+      font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--page-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-  /* Color Palette Section */
-  .palette-section {
-    background: white;
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .palette-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 12px;
-  }
-  .color-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-  .color-card {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid #e0e0e0;
-  }
-  .color-swatch {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
-  }
-  .color-swatch.light-text { color: #1a1a1a; text-shadow: none; }
-  .color-info {
-    padding: 12px;
-    background: white;
-    font-size: 0.85rem;
-  }
-  .color-info .name { font-weight: 600; margin-bottom: 4px; }
-  .color-info .hex { font-family: monospace; color: #666; }
+    /* --- Hero --- */
+    .hero {
+      text-align: center;
+      padding: 60px 24px 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: var(--section-gap);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .hero p { color: var(--text-light); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
 
-  /* Logo Sections */
-  .section {
-    background: white;
-    border-radius: 16px;
-    padding: 32px;
-    margin-bottom: 32px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  }
-  .section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-    color: #1a1a1a;
-  }
-  .section .desc {
-    color: #888;
-    font-size: 0.95rem;
-    margin-bottom: 24px;
-  }
+    /* --- Section headers --- */
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .section-header p { color: var(--text-light); max-width: 560px; margin: 0 auto; }
+    .section-number {
+      display: inline-block;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--text);
+      color: white;
+      font-size: 0.85rem;
+      line-height: 32px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    section { margin-bottom: var(--section-gap); }
 
-  .logo-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 24px;
-  }
-  .logo-col h3 {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #eee;
-  }
-  .logo-pair {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .logo-item {
-    flex: 1;
-    text-align: center;
-  }
-  .logo-item img {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 16px;
-    background: white;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .logo-item img:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-  }
-  .logo-item .color-label {
-    display: inline-block;
-    margin-top: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 2px 10px;
-    border-radius: 12px;
-  }
-  .color-label.hotpink { background: #fce4ec; color: #E0548A; }
-  .color-label.dustyrose { background: #f3e5e9; color: #8C4A60; }
+    /* --- Palette cards --- */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    .palette-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .palette-swatches {
+      display: flex;
+      height: 80px;
+    }
+    .palette-swatches > div { flex: 1; }
+    .palette-info { padding: 20px 24px; }
+    .palette-info h3 { font-size: 1.1rem; margin-bottom: 4px; }
+    .palette-info .palette-desc { color: var(--text-light); font-size: 0.9rem; margin-bottom: 14px; }
+    .color-list { list-style: none; }
+    .color-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 0;
+      font-size: 0.85rem;
+    }
+    .color-dot {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+    .color-hex { color: var(--text-light); font-family: 'DM Sans', monospace; font-size: 0.8rem; }
 
-  .logo-item-square img {
-    max-width: 200px;
-  }
+    /* --- Font cards --- */
+    .font-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .font-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .font-card h3 { font-size: 1rem; margin-bottom: 4px; }
+    .font-card .font-desc { color: var(--text-light); font-size: 0.85rem; margin-bottom: 18px; }
+    .font-specimen-heading { font-size: 1.8rem; margin-bottom: 4px; line-height: 1.2; }
+    .font-specimen-sub { font-size: 1.1rem; margin-bottom: 12px; color: #444; }
+    .font-specimen-body { font-size: 0.95rem; line-height: 1.7; color: #555; margin-bottom: 14px; }
+    .font-specimen-small { font-size: 0.8rem; color: var(--text-light); }
+    .font-email-note {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
 
-  /* Dark background variant */
-  .bg-dark img {
-    background: #2a2a2a;
-    border-color: #3a3a3a;
-  }
+    /* --- Logo cards --- */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    .logo-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .logo-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      min-height: 200px;
+      background: #FDFDFD;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo-preview svg { max-width: 100%; height: auto; }
+    .logo-info { padding: 20px 24px; }
+    .logo-info h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .logo-info p { color: var(--text-light); font-size: 0.88rem; line-height: 1.5; }
+    .logo-variants {
+      display: flex;
+      gap: 16px;
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      background: #F8F8F8;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .logo-variant-thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+    }
+    .logo-variant-thumb svg { width: 100%; height: 100%; }
 
-  /* Comparison with original */
-  .original-comparison {
-    background: #fff9f0;
-    border: 2px dashed #e0c090;
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 24px;
-  }
-  .original-comparison h3 {
-    color: #b08040;
-    margin-bottom: 12px;
-  }
-  .original-comparison img {
-    max-width: 500px;
-    margin-bottom: 8px;
-  }
-  .original-comparison .note {
-    font-size: 0.85rem;
-    color: #999;
-  }
+    /* --- Combo section --- */
+    .combo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    .combo-card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
+    }
+    .combo-header {
+      padding: 28px 28px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .combo-header svg { flex-shrink: 0; }
+    .combo-body { padding: 0 28px 28px; }
+    .combo-body h4 { margin-bottom: 6px; }
+    .combo-body p { font-size: 0.92rem; line-height: 1.6; }
+    .combo-footer {
+      padding: 16px 28px;
+      font-size: 0.82rem;
+    }
 
-  .file-info {
-    font-family: monospace;
-    font-size: 0.75rem;
-    color: #aaa;
-    margin-top: 4px;
-  }
+    /* --- Original comparison --- */
+    .original-section {
+      text-align: center;
+      padding: 48px 24px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin-bottom: var(--section-gap);
+    }
+    .original-section h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .original-section img { max-width: 500px; width: 100%; }
 
-  @media (max-width: 768px) {
-    .logo-row { grid-template-columns: 1fr; }
-    .logo-pair { flex-direction: column; }
-  }
-</style>
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.6rem; }
+      .section-header h2 { font-size: 1.4rem; }
+      .palette-grid, .font-grid, .logo-grid, .combo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
+
+<!-- ======================== HERO ======================== -->
+<div class="hero">
+  <h1>Caring with Grace</h1>
+  <p>Brand Exploration v2 — Color palettes, typography, and logo directions for the team to review and discuss.</p>
+  <p style="margin-top: 16px;"><a href="mockup.html" style="color: #4A9EA8; font-weight: 600;">View palette mockup page &rarr;</a> &nbsp;See each palette applied to a realistic website layout.</p>
+</div>
+
 <div class="container">
 
-<h1>Caring With Grace - Logo Refresh</h1>
-<p class="subtitle">All logo variants with consistent, documented brand colors. Scroll to compare.</p>
-
-<!-- COLOR PALETTE -->
-<div class="palette-section">
-  <h2>Brand Color Palette</h2>
-
-  <h3 style="margin: 16px 0 12px; color: #E0548A;">Option A: Vivid Hot Pink</h3>
-  <div class="color-grid">
-    <div class="color-card">
-      <div class="color-swatch" style="background: #E0548A;">Butterfly Fill</div>
-      <div class="color-info"><div class="name">Vivid Hot Pink</div><div class="hex">#E0548A &middot; rgb(224, 84, 138)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch" style="background: #9E2D5E;">Dark Accent</div>
-      <div class="color-info"><div class="name">Deep Rose</div><div class="hex">#9E2D5E &middot; rgb(158, 45, 94)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch light-text" style="background: #F0A0BF;">Light Accent</div>
-      <div class="color-info"><div class="name">Light Pink</div><div class="hex">#F0A0BF &middot; rgb(240, 160, 191)</div></div>
-    </div>
-  </div>
-
-  <h3 style="margin: 16px 0 12px; color: #D4899E;">Option B: Soft Dusty Rose</h3>
-  <div class="color-grid">
-    <div class="color-card">
-      <div class="color-swatch" style="background: #D4899E;">Butterfly Fill</div>
-      <div class="color-info"><div class="name">Soft Dusty Rose</div><div class="hex">#D4899E &middot; rgb(212, 137, 158)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch" style="background: #8C4A60;">Dark Accent</div>
-      <div class="color-info"><div class="name">Deep Mauve</div><div class="hex">#8C4A60 &middot; rgb(140, 74, 96)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch light-text" style="background: #EBBFCC;">Light Accent</div>
-      <div class="color-info"><div class="name">Blush</div><div class="hex">#EBBFCC &middot; rgb(235, 191, 204)</div></div>
-    </div>
-  </div>
-
-  <h3 style="margin: 16px 0 12px; color: #555;">Supporting Colors</h3>
-  <div class="color-grid">
-    <div class="color-card">
-      <div class="color-swatch" style="background: #1A1A1A;">Primary Text</div>
-      <div class="color-info"><div class="name">Near Black</div><div class="hex">#1A1A1A &middot; rgb(26, 26, 26)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch" style="background: #3A3A3A;">Tagline Text</div>
-      <div class="color-info"><div class="name">Dark Gray</div><div class="hex">#3A3A3A &middot; rgb(58, 58, 58)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch" style="background: #9FD1D6;">Website Teal</div>
-      <div class="color-info"><div class="name">Teal Accent</div><div class="hex">#9FD1D6 &middot; rgb(159, 209, 214)</div></div>
-    </div>
-    <div class="color-card">
-      <div class="color-swatch light-text" style="background: #FFFFFF; border: 1px solid #ddd;">White</div>
-      <div class="color-info"><div class="name">White</div><div class="hex">#FFFFFF &middot; rgb(255, 255, 255)</div></div>
-    </div>
-  </div>
+<!-- ======================== ORIGINAL ======================== -->
+<div class="original-section">
+  <h3>Current Logo (for reference)</h3>
+  <svg viewBox="0 0 700 170" width="500" height="121" xmlns="http://www.w3.org/2000/svg">
+    <!-- Simplified representation of current logo -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap');
+    </style>
+    <!-- Butterfly (simplified original) -->
+    <g transform="translate(310, 10) rotate(-22, 40, 35) scale(0.85)">
+      <!-- Upper left wing -->
+      <path d="M 37 35 C 30 22, 18 8, 6 4 C 1 3, -2 7, 0 14 C 2 22, 10 30, 20 36 C 28 39, 34 38, 37 36 Z" fill="#D4899E" stroke="#333" stroke-width="0.8"/>
+      <!-- Upper right wing -->
+      <path d="M 43 35 C 50 22, 62 8, 74 4 C 79 3, 82 7, 80 14 C 78 22, 70 30, 60 36 C 52 39, 46 38, 43 36 Z" fill="#D4899E" stroke="#333" stroke-width="0.8"/>
+      <!-- Lower left wing -->
+      <path d="M 37 40 C 32 46, 22 56, 16 64 C 13 68, 14 72, 18 73 C 22 74, 27 72, 32 66 C 36 60, 38 50, 37 42 Z" fill="#D4899E" stroke="#333" stroke-width="0.8"/>
+      <!-- Lower right wing -->
+      <path d="M 43 40 C 48 46, 58 56, 64 64 C 67 68, 66 72, 62 73 C 58 74, 53 72, 48 66 C 44 60, 42 50, 43 42 Z" fill="#D4899E" stroke="#333" stroke-width="0.8"/>
+      <!-- Body -->
+      <ellipse cx="40" cy="40" rx="2.5" ry="14" fill="#333"/>
+      <!-- Antennae -->
+      <path d="M 39 27 Q 32 16, 24 11" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+      <path d="M 41 27 Q 48 16, 56 11" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round"/>
+      <circle cx="24" cy="11" r="1.5" fill="#333"/>
+      <circle cx="56" cy="11" r="1.5" fill="#333"/>
+    </g>
+    <text x="0" y="105" font-family="'Playfair Display', Georgia, serif" font-size="72" fill="#1A1A1A" letter-spacing="-1">Caring with Grace</text>
+    <text x="52" y="148" font-family="'Playfair Display', Georgia, serif" font-size="26" fill="#555" font-style="italic" letter-spacing="1">Helping those you love live with dignity</text>
+  </svg>
 </div>
 
-<!-- ORIGINAL FOR COMPARISON -->
-<div class="section">
-  <h2>Original Logo (for reference)</h2>
-  <div class="original-comparison">
-    <h3>Current main logo</h3>
-    <img src="originals/original-full-logo.png" alt="Original logo">
-    <div class="note">3496 x 840px &middot; Note the elongated aspect ratio and inconsistent pink across file versions</div>
-  </div>
-</div>
 
-<!-- LAYOUT 1: HORIZONTAL WITH TAGLINE -->
-<div class="section">
-  <h2>1. Horizontal with Tagline</h2>
-  <p class="desc">Full logo &mdash; best for website headers, letterhead, email signatures</p>
-
-  <div class="logo-row">
-    <div class="logo-col">
-      <h3>Classic Butterfly (traced from original)</h3>
-      <div class="logo-pair">
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-tagline-classic-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-          <div class="file-info">cwg-horizontal-tagline-classic-hotpink.svg</div>
-        </div>
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-tagline-classic-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-          <div class="file-info">cwg-horizontal-tagline-classic-dustyrose.svg</div>
-        </div>
-      </div>
-    </div>
-    <div class="logo-col">
-      <h3>Modern Butterfly (clean redesign)</h3>
-      <div class="logo-pair">
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-tagline-modern-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-          <div class="file-info">cwg-horizontal-tagline-modern-hotpink.svg</div>
-        </div>
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-tagline-modern-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-          <div class="file-info">cwg-horizontal-tagline-modern-dustyrose.svg</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LAYOUT 2: HORIZONTAL NO TAGLINE -->
-<div class="section">
-  <h2>2. Horizontal (No Tagline)</h2>
-  <p class="desc">Shorter version &mdash; great for business cards, smaller headers, social banners</p>
-
-  <div class="logo-row">
-    <div class="logo-col">
-      <h3>Classic Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-classic-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-classic-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-    <div class="logo-col">
-      <h3>Modern Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-modern-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item">
-          <img src="svg/cwg-horizontal-modern-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LAYOUT 3: STACKED -->
-<div class="section">
-  <h2>3. Stacked (Square-friendly)</h2>
-  <p class="desc">Butterfly centered above text &mdash; ideal for social media profile pics, square placements</p>
-
-  <div class="logo-row">
-    <div class="logo-col">
-      <h3>Classic Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item">
-          <img src="svg/cwg-stacked-classic-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item">
-          <img src="svg/cwg-stacked-classic-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-    <div class="logo-col">
-      <h3>Modern Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item">
-          <img src="svg/cwg-stacked-modern-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item">
-          <img src="svg/cwg-stacked-modern-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LAYOUT 4: BUTTERFLY ICON -->
-<div class="section">
-  <h2>4. Butterfly Icon</h2>
-  <p class="desc">Standalone butterfly &mdash; for favicons, app icons, watermarks, social avatars</p>
-
-  <div class="logo-row">
-    <div class="logo-col">
-      <h3>Classic Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-butterfly-classic-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-butterfly-classic-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-    <div class="logo-col">
-      <h3>Modern Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-butterfly-modern-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-butterfly-modern-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LAYOUT 5: CWG ICON -->
-<div class="section">
-  <h2>5. CwG Monogram</h2>
-  <p class="desc">Compact initials + butterfly (no background) &mdash; for transparent overlay uses</p>
-
-  <div class="logo-row">
-    <div class="logo-col">
-      <h3>Classic Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-cwg-classic-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-cwg-classic-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-    <div class="logo-col">
-      <h3>Modern Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-cwg-modern-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-        </div>
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-icon-cwg-modern-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- LAYOUT 6: MINI LOGO -->
-<div class="section">
-  <h2>6. Mini Logo (Refreshed)</h2>
-  <p class="desc">Square icon with rounded corners + CwG text &mdash; direct replacement for the original mini logo. Great for favicons, app icons, profile pictures.</p>
-
-  <div class="original-comparison">
-    <h3>Original mini logo (for comparison)</h3>
-    <img src="originals/original-mini-logo.png" alt="Original mini logo" style="max-width: 120px;">
-    <span style="font-size: 0.85rem; color: #999; margin-left: 12px;">105 x 109px (original)</span>
+<!-- ======================== 1. COLOR PALETTES ======================== -->
+<section id="palettes">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <h2>Color Palettes</h2>
+    <p>Five palette options — each one designed to feel warm, trustworthy, and appropriate for elder care.</p>
   </div>
 
-  <div class="logo-row">
-    <div class="logo-col">
-      <h3>Classic Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-mini-classic-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-          <div class="file-info">cwg-mini-classic-hotpink.svg</div>
-        </div>
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-mini-classic-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-          <div class="file-info">cwg-mini-classic-dustyrose.svg</div>
-        </div>
+  <div class="palette-grid">
+
+    <!-- Palette A: Current Refresh -->
+    <div class="palette-card">
+      <div class="palette-swatches">
+        <div style="background: #4A9EA8;"></div>
+        <div style="background: #D4899E;"></div>
+        <div style="background: #2C3E50;"></div>
+        <div style="background: #F0F7F8;"></div>
+        <div style="background: #FFFFFF;"></div>
+      </div>
+      <div class="palette-info">
+        <h3>A. Teal & Blush</h3>
+        <p class="palette-desc">Closest to the current site's teal, with the butterfly's pink as a warm accent. Familiar but refreshed.</p>
+        <ul class="color-list">
+          <li><span class="color-dot" style="background: #4A9EA8;"></span> Teal <span class="color-hex">#4A9EA8</span></li>
+          <li><span class="color-dot" style="background: #D4899E;"></span> Blush <span class="color-hex">#D4899E</span></li>
+          <li><span class="color-dot" style="background: #2C3E50;"></span> Charcoal <span class="color-hex">#2C3E50</span></li>
+          <li><span class="color-dot" style="background: #F0F7F8;"></span> Ice <span class="color-hex">#F0F7F8</span></li>
+          <li><span class="color-dot" style="background: #FFFFFF;"></span> White <span class="color-hex">#FFFFFF</span></li>
+        </ul>
       </div>
     </div>
-    <div class="logo-col">
-      <h3>Modern Butterfly</h3>
-      <div class="logo-pair">
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-mini-modern-hotpink.svg" alt="">
-          <span class="color-label hotpink">Hot Pink</span>
-          <div class="file-info">cwg-mini-modern-hotpink.svg</div>
-        </div>
-        <div class="logo-item logo-item-square">
-          <img src="svg/cwg-mini-modern-dustyrose.svg" alt="">
-          <span class="color-label dustyrose">Dusty Rose</span>
-          <div class="file-info">cwg-mini-modern-dustyrose.svg</div>
-        </div>
+
+    <!-- Palette B: Warm Blush -->
+    <div class="palette-card">
+      <div class="palette-swatches">
+        <div style="background: #C17C8E;"></div>
+        <div style="background: #C9A96E;"></div>
+        <div style="background: #3A2524;"></div>
+        <div style="background: #FDF6F0;"></div>
+        <div style="background: #F0D5DC;"></div>
+      </div>
+      <div class="palette-info">
+        <h3>B. Rose & Gold</h3>
+        <p class="palette-desc">Warm and nurturing. The rose and gold feel elegant and personal — great for a caregiving brand.</p>
+        <ul class="color-list">
+          <li><span class="color-dot" style="background: #C17C8E;"></span> Rose <span class="color-hex">#C17C8E</span></li>
+          <li><span class="color-dot" style="background: #C9A96E;"></span> Gold <span class="color-hex">#C9A96E</span></li>
+          <li><span class="color-dot" style="background: #3A2524;"></span> Espresso <span class="color-hex">#3A2524</span></li>
+          <li><span class="color-dot" style="background: #FDF6F0;"></span> Cream <span class="color-hex">#FDF6F0</span></li>
+          <li><span class="color-dot" style="background: #F0D5DC;"></span> Blush <span class="color-hex">#F0D5DC</span></li>
+        </ul>
       </div>
     </div>
+
+    <!-- Palette C: Sage Garden -->
+    <div class="palette-card">
+      <div class="palette-swatches">
+        <div style="background: #7A9E7E;"></div>
+        <div style="background: #CB8E8E;"></div>
+        <div style="background: #2B3A2E;"></div>
+        <div style="background: #F5F2ED;"></div>
+        <div style="background: #C5DEC8;"></div>
+      </div>
+      <div class="palette-info">
+        <h3>C. Sage & Dusty Rose</h3>
+        <p class="palette-desc">Earthy and calming. Sage green evokes growth and wellness; dusty rose keeps the warmth.</p>
+        <ul class="color-list">
+          <li><span class="color-dot" style="background: #7A9E7E;"></span> Sage <span class="color-hex">#7A9E7E</span></li>
+          <li><span class="color-dot" style="background: #CB8E8E;"></span> Dusty Rose <span class="color-hex">#CB8E8E</span></li>
+          <li><span class="color-dot" style="background: #2B3A2E;"></span> Forest <span class="color-hex">#2B3A2E</span></li>
+          <li><span class="color-dot" style="background: #F5F2ED;"></span> Linen <span class="color-hex">#F5F2ED</span></li>
+          <li><span class="color-dot" style="background: #C5DEC8;"></span> Mint <span class="color-hex">#C5DEC8</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Palette D: Coastal -->
+    <div class="palette-card">
+      <div class="palette-swatches">
+        <div style="background: #4A6885;"></div>
+        <div style="background: #E08B6D;"></div>
+        <div style="background: #1E2D3D;"></div>
+        <div style="background: #F5F7FA;"></div>
+        <div style="background: #B5CEE0;"></div>
+      </div>
+      <div class="palette-info">
+        <h3>D. Navy & Coral</h3>
+        <p class="palette-desc">Professional and trustworthy. Navy signals reliability; coral adds energy and approachability.</p>
+        <ul class="color-list">
+          <li><span class="color-dot" style="background: #4A6885;"></span> Navy <span class="color-hex">#4A6885</span></li>
+          <li><span class="color-dot" style="background: #E08B6D;"></span> Coral <span class="color-hex">#E08B6D</span></li>
+          <li><span class="color-dot" style="background: #1E2D3D;"></span> Midnight <span class="color-hex">#1E2D3D</span></li>
+          <li><span class="color-dot" style="background: #F5F7FA;"></span> Pearl <span class="color-hex">#F5F7FA</span></li>
+          <li><span class="color-dot" style="background: #B5CEE0;"></span> Sky <span class="color-hex">#B5CEE0</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Palette E: Plum -->
+    <div class="palette-card">
+      <div class="palette-swatches">
+        <div style="background: #7B5E7B;"></div>
+        <div style="background: #D4A853;"></div>
+        <div style="background: #2E1E2E;"></div>
+        <div style="background: #F8F4F8;"></div>
+        <div style="background: #C9B3D4;"></div>
+      </div>
+      <div class="palette-info">
+        <h3>E. Plum & Honey</h3>
+        <p class="palette-desc">Rich and distinctive. Plum feels sophisticated and caring; honey adds warmth and optimism.</p>
+        <ul class="color-list">
+          <li><span class="color-dot" style="background: #7B5E7B;"></span> Plum <span class="color-hex">#7B5E7B</span></li>
+          <li><span class="color-dot" style="background: #D4A853;"></span> Honey <span class="color-hex">#D4A853</span></li>
+          <li><span class="color-dot" style="background: #2E1E2E;"></span> Aubergine <span class="color-hex">#2E1E2E</span></li>
+          <li><span class="color-dot" style="background: #F8F4F8;"></span> Lavender <span class="color-hex">#F8F4F8</span></li>
+          <li><span class="color-dot" style="background: #C9B3D4;"></span> Lilac <span class="color-hex">#C9B3D4</span></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
+</section>
+
+
+<!-- ======================== 2. TYPOGRAPHY ======================== -->
+<section id="typography">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <h2>Typography</h2>
+    <p>Font pairings that work across web, email, and print. Each includes email-safe fallbacks.</p>
+  </div>
+
+  <div class="font-grid">
+
+    <!-- Font 1: Playfair + Open Sans -->
+    <div class="font-card">
+      <h3>1. Classic Elegance</h3>
+      <p class="font-desc">Playfair Display + Open Sans</p>
+      <div class="font-specimen-heading" style="font-family: 'Playfair Display', Georgia, serif;">Caring with Grace</div>
+      <div class="font-specimen-sub" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic;">Helping those you love live with dignity</div>
+      <p class="font-specimen-body" style="font-family: 'Open Sans', Arial, sans-serif;">We provide personalized aging life care management, helping families navigate the complexities of elder care with compassion and expertise.</p>
+      <p class="font-specimen-small" style="font-family: 'Open Sans', Arial, sans-serif;">Grace Johnson, MSW, CMC &bull; Caring with Grace &bull; (555) 123-4567</p>
+      <div class="font-email-note">Email fallback: Georgia + Arial</div>
+    </div>
+
+    <!-- Font 2: DM Serif + DM Sans -->
+    <div class="font-card">
+      <h3>2. Modern Warmth</h3>
+      <p class="font-desc">DM Serif Display + DM Sans</p>
+      <div class="font-specimen-heading" style="font-family: 'DM Serif Display', Georgia, serif;">Caring with Grace</div>
+      <div class="font-specimen-sub" style="font-family: 'DM Serif Display', Georgia, serif; font-style: italic;">Helping those you love live with dignity</div>
+      <p class="font-specimen-body" style="font-family: 'DM Sans', Helvetica, sans-serif;">We provide personalized aging life care management, helping families navigate the complexities of elder care with compassion and expertise.</p>
+      <p class="font-specimen-small" style="font-family: 'DM Sans', Helvetica, sans-serif;">Grace Johnson, MSW, CMC &bull; Caring with Grace &bull; (555) 123-4567</p>
+      <div class="font-email-note">Email fallback: Georgia + Helvetica</div>
+    </div>
+
+    <!-- Font 3: Cormorant + Lato -->
+    <div class="font-card">
+      <h3>3. Refined Professional</h3>
+      <p class="font-desc">Cormorant Garamond + Lato</p>
+      <div class="font-specimen-heading" style="font-family: 'Cormorant Garamond', Garamond, serif; font-weight: 600;">Caring with Grace</div>
+      <div class="font-specimen-sub" style="font-family: 'Cormorant Garamond', Garamond, serif; font-style: italic;">Helping those you love live with dignity</div>
+      <p class="font-specimen-body" style="font-family: 'Lato', Arial, sans-serif;">We provide personalized aging life care management, helping families navigate the complexities of elder care with compassion and expertise.</p>
+      <p class="font-specimen-small" style="font-family: 'Lato', Arial, sans-serif;">Grace Johnson, MSW, CMC &bull; Caring with Grace &bull; (555) 123-4567</p>
+      <div class="font-email-note">Email fallback: Garamond + Arial</div>
+    </div>
+
+    <!-- Font 4: Nunito -->
+    <div class="font-card">
+      <h3>4. Friendly & Clean</h3>
+      <p class="font-desc">Nunito (all-in-one family)</p>
+      <div class="font-specimen-heading" style="font-family: 'Nunito', Verdana, sans-serif; font-weight: 700;">Caring with Grace</div>
+      <div class="font-specimen-sub" style="font-family: 'Nunito', Verdana, sans-serif; font-weight: 300; font-style: italic;">Helping those you love live with dignity</div>
+      <p class="font-specimen-body" style="font-family: 'Nunito', Verdana, sans-serif;">We provide personalized aging life care management, helping families navigate the complexities of elder care with compassion and expertise.</p>
+      <p class="font-specimen-small" style="font-family: 'Nunito', Verdana, sans-serif;">Grace Johnson, MSW, CMC &bull; Caring with Grace &bull; (555) 123-4567</p>
+      <div class="font-email-note">Email fallback: Verdana. Simpler to maintain — one font for everything.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================== 3. LOGO DIRECTIONS ======================== -->
+<section id="logos">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <h2>Logo Directions</h2>
+    <p>Five distinct approaches — from evolved butterfly to fresh new marks. Pick which directions feel right, and we'll refine from there.</p>
+  </div>
+
+  <div class="logo-grid">
+
+    <!-- Logo A: Refined Butterfly -->
+    <div class="logo-card">
+      <div class="logo-preview">
+        <svg viewBox="0 0 480 120" width="440" height="110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Refined butterfly -->
+          <g transform="translate(6, 8)">
+            <g transform="rotate(-18, 50, 48) scale(1.1)">
+              <!-- Upper left wing -->
+              <path d="M 46 38 C 38 26, 24 10, 10 5 C 4 3, 0 7, 1 15 C 2 24, 10 33, 22 39 C 32 43, 42 42, 46 40 Z" fill="#D4899E" stroke="#8C4A60" stroke-width="0.7"/>
+              <!-- Upper right wing -->
+              <path d="M 54 38 C 62 26, 76 10, 90 5 C 96 3, 100 7, 99 15 C 98 24, 90 33, 78 39 C 68 43, 58 42, 54 40 Z" fill="#D4899E" stroke="#8C4A60" stroke-width="0.7"/>
+              <!-- Lower left wing -->
+              <path d="M 46 44 C 38 50, 24 62, 16 72 C 12 77, 13 82, 18 83 C 23 84, 29 80, 35 72 C 40 64, 44 52, 46 46 Z" fill="#D4899E" stroke="#8C4A60" stroke-width="0.7"/>
+              <!-- Lower right wing -->
+              <path d="M 54 44 C 62 50, 76 62, 84 72 C 88 77, 87 82, 82 83 C 77 84, 71 80, 65 72 C 60 64, 56 52, 54 46 Z" fill="#D4899E" stroke="#8C4A60" stroke-width="0.7"/>
+              <!-- Wing veins -->
+              <g fill="none" stroke="#8C4A60" stroke-width="0.5" opacity="0.5">
+                <path d="M 46 39 Q 28 20, 12 10"/>
+                <path d="M 46 40 Q 22 32, 6 22"/>
+                <path d="M 54 39 Q 72 20, 88 10"/>
+                <path d="M 54 40 Q 78 32, 94 22"/>
+                <path d="M 46 45 Q 30 58, 20 72"/>
+                <path d="M 54 45 Q 70 58, 80 72"/>
+              </g>
+              <!-- Margin spots -->
+              <g fill="white" opacity="0.75">
+                <circle cx="6" cy="12" r="1.5"/><circle cx="3" cy="20" r="1.3"/>
+                <circle cx="94" cy="12" r="1.5"/><circle cx="97" cy="20" r="1.3"/>
+                <circle cx="14" cy="76" r="1.2"/><circle cx="20" cy="82" r="1.2"/>
+                <circle cx="86" cy="76" r="1.2"/><circle cx="80" cy="82" r="1.2"/>
+              </g>
+              <!-- Body -->
+              <ellipse cx="50" cy="44" rx="2.5" ry="16" fill="#8C4A60"/>
+              <!-- Antennae -->
+              <path d="M 49 29 Q 38 16, 28 10" fill="none" stroke="#8C4A60" stroke-width="1" stroke-linecap="round"/>
+              <path d="M 51 29 Q 62 16, 72 10" fill="none" stroke="#8C4A60" stroke-width="1" stroke-linecap="round"/>
+              <circle cx="28" cy="10" r="1.8" fill="#8C4A60"/>
+              <circle cx="72" cy="10" r="1.8" fill="#8C4A60"/>
+            </g>
+          </g>
+          <!-- Text -->
+          <text x="125" y="68" font-family="'Playfair Display', Georgia, serif" font-size="52" fill="#1A1A1A" letter-spacing="-0.5">Caring with Grace</text>
+          <text x="127" y="100" font-family="'Playfair Display', Georgia, serif" font-size="16" fill="#777" font-style="italic" letter-spacing="0.5">Helping those you love live with dignity</text>
+        </svg>
+      </div>
+      <div class="logo-info">
+        <h3>A. Refined Butterfly</h3>
+        <p>The current butterfly, redrawn as clean vector art. Keeps the brand recognition Mom has built, but sharper and more consistent. Every size stays crisp.</p>
+      </div>
+    </div>
+
+    <!-- Logo B: Abstract Wings -->
+    <div class="logo-card">
+      <div class="logo-preview">
+        <svg viewBox="0 0 480 120" width="440" height="110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Abstract wings mark -->
+          <g transform="translate(30, 10)">
+            <!-- Left wing - flowing curve -->
+            <path d="M 45 90 C 35 70, 8 45, 12 22 C 14 12, 22 6, 32 10 C 40 14, 44 26, 45 40" fill="#4A9EA8" opacity="0.85"/>
+            <!-- Right wing - flowing curve -->
+            <path d="M 45 90 C 55 70, 82 45, 78 22 C 76 12, 68 6, 58 10 C 50 14, 46 26, 45 40" fill="#D4899E" opacity="0.85"/>
+            <!-- Center accent -->
+            <path d="M 45 38 L 45 92" fill="none" stroke="#2C3E50" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <!-- Text -->
+          <text x="125" y="68" font-family="'Playfair Display', Georgia, serif" font-size="52" fill="#1A1A1A" letter-spacing="-0.5">Caring with Grace</text>
+          <text x="127" y="100" font-family="'Playfair Display', Georgia, serif" font-size="16" fill="#777" font-style="italic" letter-spacing="0.5">Helping those you love live with dignity</text>
+        </svg>
+      </div>
+      <div class="logo-info">
+        <h3>B. Abstract Wings</h3>
+        <p>Two gentle curves evoking butterfly wings — or open arms in an embrace. Simple enough to work at any size, from favicon to billboard. The two-tone treatment could reflect any palette.</p>
+      </div>
+    </div>
+
+    <!-- Logo C: Elegant Monogram -->
+    <div class="logo-card">
+      <div class="logo-preview">
+        <svg viewBox="0 0 480 120" width="440" height="110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Monogram mark -->
+          <g transform="translate(10, 8)">
+            <rect x="5" y="5" width="95" height="95" rx="20" ry="20" fill="#4A9EA8" opacity="0.08" stroke="#4A9EA8" stroke-width="1.5"/>
+            <text x="52" y="72" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="56" font-weight="700" fill="#2C3E50" letter-spacing="-1">
+              <tspan font-style="italic">C</tspan>w<tspan font-style="italic">G</tspan>
+            </text>
+            <!-- Small butterfly accent above the w -->
+            <g transform="translate(44, 18) scale(0.3) rotate(-15, 25, 20)">
+              <path d="M 22 20 C 16 10, 4 0, 0 4 C -2 8, 4 16, 12 20 Z" fill="#D4899E"/>
+              <path d="M 28 20 C 34 10, 46 0, 50 4 C 52 8, 46 16, 38 20 Z" fill="#D4899E"/>
+              <path d="M 22 22 C 16 28, 8 38, 10 40 C 12 42, 18 38, 22 30 Z" fill="#D4899E" opacity="0.7"/>
+              <path d="M 28 22 C 34 28, 42 38, 40 40 C 38 42, 32 38, 28 30 Z" fill="#D4899E" opacity="0.7"/>
+            </g>
+          </g>
+          <!-- Text -->
+          <text x="125" y="68" font-family="'Playfair Display', Georgia, serif" font-size="52" fill="#1A1A1A" letter-spacing="-0.5">Caring with Grace</text>
+          <text x="127" y="100" font-family="'Playfair Display', Georgia, serif" font-size="16" fill="#777" font-style="italic" letter-spacing="0.5">Helping those you love live with dignity</text>
+        </svg>
+      </div>
+      <div class="logo-info">
+        <h3>C. CwG Monogram</h3>
+        <p>A clean lettermark with a tiny butterfly accent. Works beautifully as a social media avatar, app icon, or email signature stamp. The full name sits alongside for context.</p>
+      </div>
+    </div>
+
+    <!-- Logo D: Typographic -->
+    <div class="logo-card">
+      <div class="logo-preview">
+        <svg viewBox="0 0 480 120" width="440" height="110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Pure typographic logo with flourish -->
+          <text x="240" y="65" text-anchor="middle" font-family="'Cormorant Garamond', Garamond, serif" font-size="58" font-weight="600" fill="#1A1A1A" letter-spacing="1">Caring with Grace</text>
+          <!-- Subtle decorative line -->
+          <line x1="100" y1="80" x2="380" y2="80" stroke="#D4899E" stroke-width="1" opacity="0.5"/>
+          <text x="240" y="105" text-anchor="middle" font-family="'Cormorant Garamond', Garamond, serif" font-size="17" fill="#777" font-style="italic" letter-spacing="2">Helping those you love live with dignity</text>
+          <!-- Small butterfly perched on the G -->
+          <g transform="translate(388, 32) scale(0.18) rotate(-25, 25, 20)">
+            <path d="M 22 20 C 14 8, 0 -2, -4 4 C -6 10, 4 18, 14 22 Z" fill="#D4899E"/>
+            <path d="M 28 20 C 36 8, 50 -2, 54 4 C 56 10, 46 18, 36 22 Z" fill="#D4899E"/>
+            <path d="M 22 24 C 16 32, 8 42, 12 44 C 16 44, 20 36, 22 28 Z" fill="#D4899E" opacity="0.6"/>
+            <path d="M 28 24 C 34 32, 42 42, 38 44 C 34 44, 30 36, 28 28 Z" fill="#D4899E" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+      <div class="logo-info">
+        <h3>D. Typographic</h3>
+        <p>Let the name itself be the mark, using beautiful typography as the primary design element. A tiny butterfly perches on the "G" as a subtle brand signature. Minimal, elegant, memorable.</p>
+      </div>
+    </div>
+
+    <!-- Logo E: Heart & Wings -->
+    <div class="logo-card">
+      <div class="logo-preview">
+        <svg viewBox="0 0 480 120" width="440" height="110" xmlns="http://www.w3.org/2000/svg">
+          <!-- Heart with wing accent -->
+          <g transform="translate(20, 8)">
+            <g transform="translate(50, 50) scale(0.85)">
+              <!-- Heart shape -->
+              <path d="M 0 -8 C 0 -18, -8 -28, -20 -28 C -34 -28, -40 -16, -40 -6 C -40 12, -22 28, 0 42 C 22 28, 40 12, 40 -6 C 40 -16, 34 -28, 20 -28 C 8 -28, 0 -18, 0 -8 Z" fill="none" stroke="#D4899E" stroke-width="2.5"/>
+              <!-- Wing-like flourish from top right of heart -->
+              <path d="M 14 -22 C 24 -34, 42 -42, 48 -36 C 52 -32, 44 -22, 34 -16" fill="none" stroke="#4A9EA8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+              <path d="M 18 -26 C 26 -38, 38 -46, 52 -42 C 56 -40, 52 -34, 44 -30" fill="none" stroke="#4A9EA8" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </g>
+          </g>
+          <!-- Text -->
+          <text x="140" y="68" font-family="'Playfair Display', Georgia, serif" font-size="52" fill="#1A1A1A" letter-spacing="-0.5">Caring with Grace</text>
+          <text x="142" y="100" font-family="'Playfair Display', Georgia, serif" font-size="16" fill="#777" font-style="italic" letter-spacing="0.5">Helping those you love live with dignity</text>
+        </svg>
+      </div>
+      <div class="logo-info">
+        <h3>E. Heart & Wing</h3>
+        <p>A heart with graceful wing-like flourishes — combining "caring" (heart) with "grace" (the lift of a wing). Completely fresh while honoring the brand's meaning.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================== 4. PUTTING IT TOGETHER ======================== -->
+<section id="combinations">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <h2>Palette + Logo Combos</h2>
+    <p>A few combinations to show how palettes and logos work together. These are just starting points.</p>
+  </div>
+
+  <div class="combo-grid">
+
+    <!-- Combo 1: Teal palette + Refined Butterfly -->
+    <div class="combo-card" style="background: #F0F7F8;">
+      <div class="combo-header">
+        <svg viewBox="0 0 80 80" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+          <g transform="rotate(-18, 40, 40) scale(0.8) translate(10, 6)">
+            <path d="M 37 32 C 30 20, 18 6, 6 2 C 1 0, -2 4, 0 11 C 2 20, 10 28, 20 33 C 28 36, 34 35, 37 34 Z" fill="#4A9EA8" stroke="#2C6E74" stroke-width="0.6"/>
+            <path d="M 43 32 C 50 20, 62 6, 74 2 C 79 0, 82 4, 80 11 C 78 20, 70 28, 60 33 C 52 36, 46 35, 43 34 Z" fill="#4A9EA8" stroke="#2C6E74" stroke-width="0.6"/>
+            <path d="M 37 38 C 30 44, 18 54, 12 62 C 9 66, 10 70, 14 71 C 18 72, 24 68, 28 62 C 34 54, 36 44, 37 40 Z" fill="#4A9EA8" stroke="#2C6E74" stroke-width="0.6"/>
+            <path d="M 43 38 C 50 44, 62 54, 68 62 C 71 66, 70 70, 66 71 C 62 72, 56 68, 52 62 C 46 54, 44 44, 43 40 Z" fill="#4A9EA8" stroke="#2C6E74" stroke-width="0.6"/>
+            <ellipse cx="40" cy="38" rx="2" ry="14" fill="#2C6E74"/>
+            <path d="M 39 25 Q 30 14, 22 9" fill="none" stroke="#2C6E74" stroke-width="0.8" stroke-linecap="round"/>
+            <path d="M 41 25 Q 50 14, 58 9" fill="none" stroke="#2C6E74" stroke-width="0.8" stroke-linecap="round"/>
+            <circle cx="22" cy="9" r="1.5" fill="#2C6E74"/><circle cx="58" cy="9" r="1.5" fill="#2C6E74"/>
+          </g>
+        </svg>
+        <div>
+          <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; color: #2C3E50;">Caring with Grace</h4>
+          <p style="font-family: 'Open Sans', sans-serif; font-size: 0.75rem; color: #4A9EA8; text-transform: uppercase; letter-spacing: 2px;">Aging Life Care Management</p>
+        </div>
+      </div>
+      <div class="combo-body">
+        <p style="font-family: 'Open Sans', sans-serif; color: #2C3E50;">Palette A (Teal & Blush) + Logo A (Refined Butterfly) — the most conservative option. Feels like a polished version of the current brand.</p>
+      </div>
+      <div class="combo-footer" style="background: #4A9EA8; color: white;">
+        <strong>Teal & Blush</strong> + Playfair Display / Open Sans
+      </div>
+    </div>
+
+    <!-- Combo 2: Rose & Gold + Abstract Wings -->
+    <div class="combo-card" style="background: #FDF6F0;">
+      <div class="combo-header">
+        <svg viewBox="0 0 80 80" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(5, 5)">
+            <path d="M 35 65 C 28 50, 8 32, 10 16 C 11 8, 18 4, 26 7 C 32 10, 35 20, 35 30" fill="#C17C8E" opacity="0.85"/>
+            <path d="M 35 65 C 42 50, 62 32, 60 16 C 59 8, 52 4, 44 7 C 38 10, 35 20, 35 30" fill="#C9A96E" opacity="0.85"/>
+            <path d="M 35 28 L 35 66" fill="none" stroke="#3A2524" stroke-width="1.2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div>
+          <h4 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 1.2rem; color: #3A2524;">Caring with Grace</h4>
+          <p style="font-family: 'DM Sans', sans-serif; font-size: 0.75rem; color: #C17C8E; text-transform: uppercase; letter-spacing: 2px;">Aging Life Care Management</p>
+        </div>
+      </div>
+      <div class="combo-body">
+        <p style="font-family: 'DM Sans', sans-serif; color: #3A2524;">Palette B (Rose & Gold) + Logo B (Abstract Wings) — warm, contemporary, and distinctive. A bigger departure from the current look.</p>
+      </div>
+      <div class="combo-footer" style="background: #C17C8E; color: white;">
+        <strong>Rose & Gold</strong> + DM Serif Display / DM Sans
+      </div>
+    </div>
+
+    <!-- Combo 3: Sage + Typographic -->
+    <div class="combo-card" style="background: #F5F2ED;">
+      <div class="combo-header">
+        <svg viewBox="0 0 260 50" width="220" height="42" xmlns="http://www.w3.org/2000/svg">
+          <text x="130" y="30" text-anchor="middle" font-family="'Cormorant Garamond', Garamond, serif" font-size="30" font-weight="600" fill="#2B3A2E" letter-spacing="1">Caring with Grace</text>
+          <line x1="30" y1="40" x2="230" y2="40" stroke="#CB8E8E" stroke-width="0.8" opacity="0.5"/>
+          <g transform="translate(222, 10) scale(0.12) rotate(-25, 25, 20)">
+            <path d="M 22 20 C 14 8, 0 -2, -4 4 C -6 10, 4 18, 14 22 Z" fill="#7A9E7E"/>
+            <path d="M 28 20 C 36 8, 50 -2, 54 4 C 56 10, 46 18, 36 22 Z" fill="#7A9E7E"/>
+          </g>
+        </svg>
+      </div>
+      <div class="combo-body">
+        <p style="font-family: 'Lato', sans-serif; color: #2B3A2E;">Palette C (Sage & Dusty Rose) + Logo D (Typographic) — natural, grounded, professional. The typography does all the work.</p>
+      </div>
+      <div class="combo-footer" style="background: #7A9E7E; color: white;">
+        <strong>Sage & Dusty Rose</strong> + Cormorant Garamond / Lato
+      </div>
+    </div>
+
+    <!-- Combo 4: Navy + CWG Monogram -->
+    <div class="combo-card" style="background: #F5F7FA;">
+      <div class="combo-header">
+        <svg viewBox="0 0 70 70" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+          <rect x="3" y="3" width="64" height="64" rx="14" ry="14" fill="#4A6885" opacity="0.1" stroke="#4A6885" stroke-width="1.2"/>
+          <text x="35" y="48" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" fill="#1E2D3D">
+            <tspan font-style="italic">C</tspan>w<tspan font-style="italic">G</tspan>
+          </text>
+        </svg>
+        <div>
+          <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; color: #1E2D3D;">Caring with Grace</h4>
+          <p style="font-family: 'Open Sans', sans-serif; font-size: 0.75rem; color: #4A6885; text-transform: uppercase; letter-spacing: 2px;">Aging Life Care Management</p>
+        </div>
+      </div>
+      <div class="combo-body">
+        <p style="font-family: 'Open Sans', sans-serif; color: #1E2D3D;">Palette D (Navy & Coral) + Logo C (CwG Monogram) — clean, modern, instantly recognizable. Strong professional presence.</p>
+      </div>
+      <div class="combo-footer" style="background: #4A6885; color: white;">
+        <strong>Navy & Coral</strong> + Playfair Display / Open Sans
+      </div>
+    </div>
+
+    <!-- Combo 5: Plum + Heart & Wing -->
+    <div class="combo-card" style="background: #F8F4F8;">
+      <div class="combo-header">
+        <svg viewBox="0 0 80 80" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(40, 42) scale(0.7)">
+            <path d="M 0 -8 C 0 -18, -8 -28, -20 -28 C -34 -28, -40 -16, -40 -6 C -40 12, -22 28, 0 42 C 22 28, 40 12, 40 -6 C 40 -16, 34 -28, 20 -28 C 8 -28, 0 -18, 0 -8 Z" fill="none" stroke="#7B5E7B" stroke-width="2.8"/>
+            <path d="M 14 -22 C 24 -34, 42 -42, 48 -36 C 52 -32, 44 -22, 34 -16" fill="none" stroke="#D4A853" stroke-width="2.2" stroke-linecap="round" opacity="0.8"/>
+            <path d="M 18 -26 C 26 -38, 38 -46, 52 -42 C 56 -40, 52 -34, 44 -30" fill="none" stroke="#D4A853" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          </g>
+        </svg>
+        <div>
+          <h4 style="font-family: 'Nunito', Verdana, sans-serif; font-size: 1.15rem; font-weight: 700; color: #2E1E2E;">Caring with Grace</h4>
+          <p style="font-family: 'Nunito', Verdana, sans-serif; font-size: 0.75rem; color: #7B5E7B; text-transform: uppercase; letter-spacing: 2px;">Aging Life Care Management</p>
+        </div>
+      </div>
+      <div class="combo-body">
+        <p style="font-family: 'Nunito', sans-serif; color: #2E1E2E;">Palette E (Plum & Honey) + Logo E (Heart & Wing) — the most creative departure. Rich, distinctive, memorable.</p>
+      </div>
+      <div class="combo-footer" style="background: #7B5E7B; color: white;">
+        <strong>Plum & Honey</strong> + Nunito
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================== 5. WHAT'S NEXT ======================== -->
+<section id="next-steps" style="margin-bottom: 40px;">
+  <div class="section-header">
+    <h2>What We Need From You</h2>
+    <p>This is an exploration, not a final product. We want your reactions.</p>
+  </div>
+
+  <div style="max-width: 640px; margin: 0 auto; background: var(--card-bg); border-radius: 16px; padding: 32px; border: 1px solid var(--border);">
+    <ol style="padding-left: 20px; line-height: 2.2; color: #444;">
+      <li><strong>Color palettes:</strong> Which 1-2 palettes feel right for Caring with Grace? Any that feel completely wrong?</li>
+      <li><strong>Fonts:</strong> Which pairing feels most "us"? Remember these need to work in email signatures too.</li>
+      <li><strong>Logo directions:</strong> Which 1-2 approaches should we develop further? Fine to mix ideas (e.g., "I like the butterfly from A but the layout of D").</li>
+      <li><strong>Overall mood:</strong> Should the brand feel more classic/traditional or modern/fresh?</li>
+    </ol>
+    <p style="margin-top: 20px; color: #888; font-size: 0.85rem;">Don't worry about getting it perfect — this round is about narrowing directions. We'll refine your top picks in the next round.</p>
+  </div>
+</section>
+
 </div>
 
-<!-- FILE INVENTORY -->
-<div class="section">
-  <h2>File Inventory</h2>
-  <p class="desc">All generated files in the logo-refresh folder</p>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-    <div>
-      <h3 style="margin-bottom: 12px;">SVG Files (vector, infinitely scalable)</h3>
-      <ul style="font-family: monospace; font-size: 0.8rem; list-style: none; line-height: 2;">
-        <li>svg/cwg-horizontal-tagline-classic-hotpink.svg</li>
-        <li>svg/cwg-horizontal-tagline-classic-dustyrose.svg</li>
-        <li>svg/cwg-horizontal-tagline-modern-hotpink.svg</li>
-        <li>svg/cwg-horizontal-tagline-modern-dustyrose.svg</li>
-        <li>svg/cwg-horizontal-classic-hotpink.svg</li>
-        <li>svg/cwg-horizontal-classic-dustyrose.svg</li>
-        <li>svg/cwg-horizontal-modern-hotpink.svg</li>
-        <li>svg/cwg-horizontal-modern-dustyrose.svg</li>
-        <li>svg/cwg-stacked-classic-hotpink.svg</li>
-        <li>svg/cwg-stacked-classic-dustyrose.svg</li>
-        <li>svg/cwg-stacked-modern-hotpink.svg</li>
-        <li>svg/cwg-stacked-modern-dustyrose.svg</li>
-        <li>svg/cwg-icon-butterfly-classic-hotpink.svg</li>
-        <li>svg/cwg-icon-butterfly-classic-dustyrose.svg</li>
-        <li>svg/cwg-icon-butterfly-modern-hotpink.svg</li>
-        <li>svg/cwg-icon-butterfly-modern-dustyrose.svg</li>
-        <li>svg/cwg-icon-cwg-classic-hotpink.svg</li>
-        <li>svg/cwg-icon-cwg-classic-dustyrose.svg</li>
-        <li>svg/cwg-icon-cwg-modern-hotpink.svg</li>
-        <li>svg/cwg-icon-cwg-modern-dustyrose.svg</li>
-        <li>svg/cwg-mini-classic-hotpink.svg</li>
-        <li>svg/cwg-mini-classic-dustyrose.svg</li>
-        <li>svg/cwg-mini-modern-hotpink.svg</li>
-        <li>svg/cwg-mini-modern-dustyrose.svg</li>
-        <li>svg/cwg-icon-cwg-modern-dustyrose.svg</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="margin-bottom: 12px;">PNG Files (raster, multiple sizes)</h3>
-      <p style="font-size: 0.9rem; color: #666;">
-        68 PNG files exported at multiple widths:<br>
-        &bull; Horizontal w/ tagline: 800w, 1600w, 3200w<br>
-        &bull; Horizontal: 600w, 1200w, 2400w<br>
-        &bull; Stacked: 400w, 800w, 1600w<br>
-        &bull; Icons: 128w, 256w, 512w, 1024w<br>
-        &bull; Mini logos: 128w, 256w, 512w, 1024w<br><br>
-        All with transparent backgrounds.
-      </p>
-    </div>
-  </div>
-</div>
+<footer>
+  Caring with Grace Brand Exploration v2 &mdash; Prepared by Clay, March 2026
+</footer>
 
-</div>
 </body>
 </html>

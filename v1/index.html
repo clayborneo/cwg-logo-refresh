@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caring With Grace - Logo Refresh Preview</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    padding: 40px 20px;
+    line-height: 1.6;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+
+  /* Color Palette Section */
+  .palette-section {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .palette-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 12px;
+  }
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .color-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+  }
+  .color-swatch {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+  .color-swatch.light-text { color: #1a1a1a; text-shadow: none; }
+  .color-info {
+    padding: 12px;
+    background: white;
+    font-size: 0.85rem;
+  }
+  .color-info .name { font-weight: 600; margin-bottom: 4px; }
+  .color-info .hex { font-family: monospace; color: #666; }
+
+  /* Logo Sections */
+  .section {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+  }
+  .section .desc {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .logo-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .logo-col h3 {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  .logo-pair {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .logo-item {
+    flex: 1;
+    text-align: center;
+  }
+  .logo-item img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .logo-item img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  .logo-item .color-label {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+  }
+  .color-label.hotpink { background: #fce4ec; color: #E0548A; }
+  .color-label.dustyrose { background: #f3e5e9; color: #8C4A60; }
+
+  .logo-item-square img {
+    max-width: 200px;
+  }
+
+  /* Dark background variant */
+  .bg-dark img {
+    background: #2a2a2a;
+    border-color: #3a3a3a;
+  }
+
+  /* Comparison with original */
+  .original-comparison {
+    background: #fff9f0;
+    border: 2px dashed #e0c090;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .original-comparison h3 {
+    color: #b08040;
+    margin-bottom: 12px;
+  }
+  .original-comparison img {
+    max-width: 500px;
+    margin-bottom: 8px;
+  }
+  .original-comparison .note {
+    font-size: 0.85rem;
+    color: #999;
+  }
+
+  .file-info {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .logo-row { grid-template-columns: 1fr; }
+    .logo-pair { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Caring With Grace - Logo Refresh</h1>
+<p class="subtitle">All logo variants with consistent, documented brand colors. Scroll to compare.</p>
+
+<!-- COLOR PALETTE -->
+<div class="palette-section">
+  <h2>Brand Color Palette</h2>
+
+  <h3 style="margin: 16px 0 12px; color: #E0548A;">Option A: Vivid Hot Pink</h3>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #E0548A;">Butterfly Fill</div>
+      <div class="color-info"><div class="name">Vivid Hot Pink</div><div class="hex">#E0548A &middot; rgb(224, 84, 138)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #9E2D5E;">Dark Accent</div>
+      <div class="color-info"><div class="name">Deep Rose</div><div class="hex">#9E2D5E &middot; rgb(158, 45, 94)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch light-text" style="background: #F0A0BF;">Light Accent</div>
+      <div class="color-info"><div class="name">Light Pink</div><div class="hex">#F0A0BF &middot; rgb(240, 160, 191)</div></div>
+    </div>
+  </div>
+
+  <h3 style="margin: 16px 0 12px; color: #D4899E;">Option B: Soft Dusty Rose</h3>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #D4899E;">Butterfly Fill</div>
+      <div class="color-info"><div class="name">Soft Dusty Rose</div><div class="hex">#D4899E &middot; rgb(212, 137, 158)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #8C4A60;">Dark Accent</div>
+      <div class="color-info"><div class="name">Deep Mauve</div><div class="hex">#8C4A60 &middot; rgb(140, 74, 96)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch light-text" style="background: #EBBFCC;">Light Accent</div>
+      <div class="color-info"><div class="name">Blush</div><div class="hex">#EBBFCC &middot; rgb(235, 191, 204)</div></div>
+    </div>
+  </div>
+
+  <h3 style="margin: 16px 0 12px; color: #555;">Supporting Colors</h3>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #1A1A1A;">Primary Text</div>
+      <div class="color-info"><div class="name">Near Black</div><div class="hex">#1A1A1A &middot; rgb(26, 26, 26)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #3A3A3A;">Tagline Text</div>
+      <div class="color-info"><div class="name">Dark Gray</div><div class="hex">#3A3A3A &middot; rgb(58, 58, 58)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #9FD1D6;">Website Teal</div>
+      <div class="color-info"><div class="name">Teal Accent</div><div class="hex">#9FD1D6 &middot; rgb(159, 209, 214)</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch light-text" style="background: #FFFFFF; border: 1px solid #ddd;">White</div>
+      <div class="color-info"><div class="name">White</div><div class="hex">#FFFFFF &middot; rgb(255, 255, 255)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ORIGINAL FOR COMPARISON -->
+<div class="section">
+  <h2>Original Logo (for reference)</h2>
+  <div class="original-comparison">
+    <h3>Current main logo</h3>
+    <img src="originals/original-full-logo.png" alt="Original logo">
+    <div class="note">3496 x 840px &middot; Note the elongated aspect ratio and inconsistent pink across file versions</div>
+  </div>
+</div>
+
+<!-- LAYOUT 1: HORIZONTAL WITH TAGLINE -->
+<div class="section">
+  <h2>1. Horizontal with Tagline</h2>
+  <p class="desc">Full logo &mdash; best for website headers, letterhead, email signatures</p>
+
+  <div class="logo-row">
+    <div class="logo-col">
+      <h3>Classic Butterfly (traced from original)</h3>
+      <div class="logo-pair">
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-tagline-classic-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+          <div class="file-info">cwg-horizontal-tagline-classic-hotpink.svg</div>
+        </div>
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-tagline-classic-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+          <div class="file-info">cwg-horizontal-tagline-classic-dustyrose.svg</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-col">
+      <h3>Modern Butterfly (clean redesign)</h3>
+      <div class="logo-pair">
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-tagline-modern-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+          <div class="file-info">cwg-horizontal-tagline-modern-hotpink.svg</div>
+        </div>
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-tagline-modern-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+          <div class="file-info">cwg-horizontal-tagline-modern-dustyrose.svg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT 2: HORIZONTAL NO TAGLINE -->
+<div class="section">
+  <h2>2. Horizontal (No Tagline)</h2>
+  <p class="desc">Shorter version &mdash; great for business cards, smaller headers, social banners</p>
+
+  <div class="logo-row">
+    <div class="logo-col">
+      <h3>Classic Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-classic-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-classic-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+    <div class="logo-col">
+      <h3>Modern Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-modern-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item">
+          <img src="svg/cwg-horizontal-modern-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT 3: STACKED -->
+<div class="section">
+  <h2>3. Stacked (Square-friendly)</h2>
+  <p class="desc">Butterfly centered above text &mdash; ideal for social media profile pics, square placements</p>
+
+  <div class="logo-row">
+    <div class="logo-col">
+      <h3>Classic Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item">
+          <img src="svg/cwg-stacked-classic-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item">
+          <img src="svg/cwg-stacked-classic-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+    <div class="logo-col">
+      <h3>Modern Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item">
+          <img src="svg/cwg-stacked-modern-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item">
+          <img src="svg/cwg-stacked-modern-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT 4: BUTTERFLY ICON -->
+<div class="section">
+  <h2>4. Butterfly Icon</h2>
+  <p class="desc">Standalone butterfly &mdash; for favicons, app icons, watermarks, social avatars</p>
+
+  <div class="logo-row">
+    <div class="logo-col">
+      <h3>Classic Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-butterfly-classic-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-butterfly-classic-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+    <div class="logo-col">
+      <h3>Modern Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-butterfly-modern-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-butterfly-modern-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT 5: CWG ICON -->
+<div class="section">
+  <h2>5. CwG Monogram</h2>
+  <p class="desc">Compact initials + butterfly (no background) &mdash; for transparent overlay uses</p>
+
+  <div class="logo-row">
+    <div class="logo-col">
+      <h3>Classic Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-cwg-classic-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-cwg-classic-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+    <div class="logo-col">
+      <h3>Modern Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-cwg-modern-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+        </div>
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-icon-cwg-modern-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT 6: MINI LOGO -->
+<div class="section">
+  <h2>6. Mini Logo (Refreshed)</h2>
+  <p class="desc">Square icon with rounded corners + CwG text &mdash; direct replacement for the original mini logo. Great for favicons, app icons, profile pictures.</p>
+
+  <div class="original-comparison">
+    <h3>Original mini logo (for comparison)</h3>
+    <img src="originals/original-mini-logo.png" alt="Original mini logo" style="max-width: 120px;">
+    <span style="font-size: 0.85rem; color: #999; margin-left: 12px;">105 x 109px (original)</span>
+  </div>
+
+  <div class="logo-row">
+    <div class="logo-col">
+      <h3>Classic Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-mini-classic-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+          <div class="file-info">cwg-mini-classic-hotpink.svg</div>
+        </div>
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-mini-classic-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+          <div class="file-info">cwg-mini-classic-dustyrose.svg</div>
+        </div>
+      </div>
+    </div>
+    <div class="logo-col">
+      <h3>Modern Butterfly</h3>
+      <div class="logo-pair">
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-mini-modern-hotpink.svg" alt="">
+          <span class="color-label hotpink">Hot Pink</span>
+          <div class="file-info">cwg-mini-modern-hotpink.svg</div>
+        </div>
+        <div class="logo-item logo-item-square">
+          <img src="svg/cwg-mini-modern-dustyrose.svg" alt="">
+          <span class="color-label dustyrose">Dusty Rose</span>
+          <div class="file-info">cwg-mini-modern-dustyrose.svg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILE INVENTORY -->
+<div class="section">
+  <h2>File Inventory</h2>
+  <p class="desc">All generated files in the logo-refresh folder</p>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+    <div>
+      <h3 style="margin-bottom: 12px;">SVG Files (vector, infinitely scalable)</h3>
+      <ul style="font-family: monospace; font-size: 0.8rem; list-style: none; line-height: 2;">
+        <li>svg/cwg-horizontal-tagline-classic-hotpink.svg</li>
+        <li>svg/cwg-horizontal-tagline-classic-dustyrose.svg</li>
+        <li>svg/cwg-horizontal-tagline-modern-hotpink.svg</li>
+        <li>svg/cwg-horizontal-tagline-modern-dustyrose.svg</li>
+        <li>svg/cwg-horizontal-classic-hotpink.svg</li>
+        <li>svg/cwg-horizontal-classic-dustyrose.svg</li>
+        <li>svg/cwg-horizontal-modern-hotpink.svg</li>
+        <li>svg/cwg-horizontal-modern-dustyrose.svg</li>
+        <li>svg/cwg-stacked-classic-hotpink.svg</li>
+        <li>svg/cwg-stacked-classic-dustyrose.svg</li>
+        <li>svg/cwg-stacked-modern-hotpink.svg</li>
+        <li>svg/cwg-stacked-modern-dustyrose.svg</li>
+        <li>svg/cwg-icon-butterfly-classic-hotpink.svg</li>
+        <li>svg/cwg-icon-butterfly-classic-dustyrose.svg</li>
+        <li>svg/cwg-icon-butterfly-modern-hotpink.svg</li>
+        <li>svg/cwg-icon-butterfly-modern-dustyrose.svg</li>
+        <li>svg/cwg-icon-cwg-classic-hotpink.svg</li>
+        <li>svg/cwg-icon-cwg-classic-dustyrose.svg</li>
+        <li>svg/cwg-icon-cwg-modern-hotpink.svg</li>
+        <li>svg/cwg-icon-cwg-modern-dustyrose.svg</li>
+        <li>svg/cwg-mini-classic-hotpink.svg</li>
+        <li>svg/cwg-mini-classic-dustyrose.svg</li>
+        <li>svg/cwg-mini-modern-hotpink.svg</li>
+        <li>svg/cwg-mini-modern-dustyrose.svg</li>
+        <li>svg/cwg-icon-cwg-modern-dustyrose.svg</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-bottom: 12px;">PNG Files (raster, multiple sizes)</h3>
+      <p style="font-size: 0.9rem; color: #666;">
+        68 PNG files exported at multiple widths:<br>
+        &bull; Horizontal w/ tagline: 800w, 1600w, 3200w<br>
+        &bull; Horizontal: 600w, 1200w, 2400w<br>
+        &bull; Stacked: 400w, 800w, 1600w<br>
+        &bull; Icons: 128w, 256w, 512w, 1024w<br>
+        &bull; Mini logos: 128w, 256w, 512w, 1024w<br><br>
+        All with transparent backgrounds.
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
