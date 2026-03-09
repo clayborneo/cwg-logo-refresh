@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caring with Grace — Palette Mockup</title>
+  <title>Caring with Grace — Brand Refresh Mockup</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Great+Vibes&family=Parisienne&family=Alex+Brush&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -86,6 +86,12 @@
     }
     .back-link:hover { color: #FFF; }
 
+    /* --- Accent Strip --- */
+    .header-accent {
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
+
     /* --- Site Header --- */
     .site-header {
       background: var(--white);
@@ -116,46 +122,155 @@
     }
     .site-nav a:hover { color: var(--primary); }
 
-    /* --- Hero --- */
-    .hero {
-      background: var(--primary-light);
-      padding: 80px 40px;
+    /* --- Hero / Video Section --- */
+    .hero-video {
+      position: relative;
+      background: var(--dark);
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 60%, var(--secondary) 100%);
+      opacity: 0.9;
+    }
+    .hero-video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      opacity: 0.2;
+    }
+    .hero-video-placeholder svg {
+      width: 80px;
+      height: 80px;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      padding: 60px 40px;
+      max-width: 720px;
     }
-    .hero h1 {
+    .hero-content h1 {
       font-family: var(--heading-font);
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 400;
-      color: var(--text);
+      color: var(--white);
       margin-bottom: 16px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.2;
     }
-    .hero p {
+    .hero-content p {
       font-size: 1.15rem;
-      color: var(--text-light);
+      color: rgba(255,255,255,0.85);
       max-width: 560px;
-      margin: 0 auto 28px;
+      margin: 0 auto 32px;
       line-height: 1.7;
     }
-    .hero-btn {
-      display: inline-block;
-      padding: 14px 36px;
-      background: var(--primary);
+    .hero-play-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.4);
       color: var(--white);
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 50px;
       font-size: 1rem;
       font-family: var(--body-font);
       font-weight: 600;
-      transition: background 0.2s;
+      transition: all 0.3s;
+      cursor: pointer;
     }
-    .hero-btn:hover { background: var(--primary-dark); }
+    .hero-play-btn:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.7);
+    }
+    .hero-play-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-play-icon svg {
+      width: 10px;
+      height: 12px;
+      margin-left: 2px;
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 20px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      font-family: var(--body-font);
+    }
 
-    /* --- Services --- */
+    /* --- Intro / Care Management Block --- */
+    .intro-section {
+      padding: 80px 40px;
+      text-align: center;
+      background: var(--white);
+    }
+    .intro-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .intro-section h2 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .intro-section p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .intro-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--secondary);
+      margin: 0 auto 28px;
+      border-radius: 2px;
+    }
+    .intro-highlight {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 28px;
+      background: var(--primary-light);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      color: var(--text);
+      font-style: italic;
+      text-align: left;
+    }
+
+    /* --- How We Help --- */
     .services {
-      padding: 72px 40px;
+      padding: 80px 40px;
+      background: var(--light);
+    }
+    .services-inner {
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -167,11 +282,11 @@
       margin-bottom: 12px;
       color: var(--text);
     }
-    .services > p {
+    .services > .services-inner > p {
       text-align: center;
       color: var(--text-light);
       max-width: 500px;
-      margin: 0 auto 40px;
+      margin: 0 auto 48px;
     }
     .services-grid {
       display: grid;
@@ -182,26 +297,29 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 28px 24px;
+      padding: 32px 24px;
       text-align: center;
-      transition: box-shadow 0.2s;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .service-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
     .service-icon {
-      width: 48px; height: 48px;
+      width: 56px; height: 56px;
       border-radius: 50%;
       background: var(--primary-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 16px;
+      margin: 0 auto 18px;
     }
-    .service-icon svg { width: 24px; height: 24px; }
+    .service-icon svg { width: 26px; height: 26px; }
     .service-card h3 {
       font-family: var(--heading-font);
       font-size: 1.1rem;
       font-weight: 400;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: var(--text);
     }
     .service-card p {
@@ -210,96 +328,85 @@
       line-height: 1.6;
     }
 
-    /* --- About / Feature --- */
-    .about-section {
+    /* --- Contact Form --- */
+    .contact-section {
+      padding: 80px 40px;
       background: var(--white);
-      padding: 72px 40px;
     }
-    .about-inner {
-      max-width: 1000px;
+    .contact-inner {
+      max-width: 640px;
       margin: 0 auto;
+    }
+    .contact-section h2 {
+      font-family: var(--heading-font);
+      font-size: 2rem;
+      font-weight: 400;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    .contact-section > .contact-inner > p {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 40px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      gap: 20px;
     }
-    .about-text h2 {
-      font-family: var(--heading-font);
-      font-size: 1.8rem;
-      font-weight: 400;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-    .about-text p {
-      color: var(--text-light);
-      margin-bottom: 12px;
-      line-height: 1.7;
-    }
-    .about-image {
-      background: var(--primary-light);
-      border-radius: 16px;
-      height: 320px;
+    .form-group {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
       font-size: 0.85rem;
-      font-style: italic;
-    }
-
-    /* --- Quote / Testimonial --- */
-    .quote-section {
-      background: var(--primary);
-      padding: 64px 40px;
-      text-align: center;
-    }
-    .quote-section blockquote {
-      font-family: var(--heading-font);
-      font-size: 1.5rem;
-      font-style: italic;
-      color: var(--white);
-      max-width: 680px;
-      margin: 0 auto 16px;
-      line-height: 1.6;
-      font-weight: 400;
-    }
-    .quote-section cite {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
-      font-style: normal;
-      font-family: var(--body-font);
-    }
-
-    /* --- CTA Band --- */
-    .cta-band {
-      background: var(--secondary-light);
-      padding: 56px 40px;
-      text-align: center;
-    }
-    .cta-band h2 {
-      font-family: var(--heading-font);
-      font-size: 1.8rem;
-      font-weight: 400;
-      margin-bottom: 12px;
+      font-weight: 600;
       color: var(--text);
     }
-    .cta-band p {
-      color: var(--text-light);
-      margin-bottom: 24px;
-      max-width: 480px;
-      margin-left: auto;
-      margin-right: auto;
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: var(--body-font);
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
     }
-    .cta-btn {
-      display: inline-block;
-      padding: 14px 36px;
-      background: var(--secondary);
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-submit {
+      padding: 16px 40px;
+      background: var(--primary);
       color: var(--white);
-      text-decoration: none;
-      border-radius: 6px;
+      border: none;
+      border-radius: 8px;
       font-size: 1rem;
       font-family: var(--body-font);
       font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .form-submit:hover {
+      background: var(--primary-dark);
     }
 
     /* --- Footer --- */
@@ -347,19 +454,16 @@
       font-size: 0.8rem;
     }
 
-    /* --- Palette swatch preview in header --- */
-    .header-accent {
-      height: 4px;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
-    }
-
     @media (max-width: 768px) {
       .site-header { padding: 0 20px; }
       .site-nav { display: none; }
-      .hero { padding: 48px 20px; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero-content { padding: 40px 20px; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-video { min-height: 400px; }
+      .intro-section { padding: 48px 20px; }
       .services { padding: 48px 20px; }
-      .about-inner { grid-template-columns: 1fr; gap: 32px; }
+      .contact-section { padding: 48px 20px; }
+      .form-row { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
       .back-link { display: none; }
     }
@@ -381,10 +485,10 @@
     <span class="switcher-dot" style="background: #7A9E7E;"></span> C. Sage & Rose
   </button>
   <button class="switcher-btn" onclick="setPalette('d')">
-    <span class="switcher-dot" style="background: #4A6885;"></span> D. Navy & Coral
+    <span class="switcher-dot" style="background: #1A8A95;"></span> D. Deep Teal & Raspberry
   </button>
   <button class="switcher-btn" onclick="setPalette('e')">
-    <span class="switcher-dot" style="background: #7B5E7B;"></span> E. Plum & Honey
+    <span class="switcher-dot" style="background: #8BABA8;"></span> E. Mist & Blush
   </button>
 </div>
 
@@ -416,78 +520,143 @@
   </ul>
 </header>
 
-<!-- ======================== HERO ======================== -->
-<section class="hero">
-  <h1>Helping those you love live with dignity</h1>
-  <p>Caring with Grace provides compassionate, personalized aging life care management for families in the Dallas-Fort Worth area. Since 2006.</p>
-  <a href="#" class="hero-btn">Schedule a Consultation</a>
+<!-- ======================== HERO / VIDEO SECTION ======================== -->
+<section class="hero-video">
+  <div class="hero-video-bg"></div>
+  <!-- Video play icon placeholder -->
+  <div class="hero-video-placeholder">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="4" stroke="white" stroke-width="1.5"/>
+      <polygon points="9.5,7 17,12 9.5,17" fill="white"/>
+    </svg>
+    <span style="color: white; font-size: 0.85rem; font-family: 'Open Sans', sans-serif;">Explainer video will go here</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Dallas-Fort Worth &bull; Since 2006</div>
+    <h1>Helping those you love live with dignity</h1>
+    <p>We're Aging Life Care professionals who guide families through the challenges of aging, illness, and disability with expert care management.</p>
+    <a class="hero-play-btn">
+      <span class="hero-play-icon">
+        <svg viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="1,0 12,7 1,14" fill="var(--primary)"/>
+        </svg>
+      </span>
+      Watch: What Is Care Management?
+    </a>
+  </div>
 </section>
 
-<!-- ======================== SERVICES ======================== -->
+<!-- ======================== INTRO / CARE MANAGEMENT ======================== -->
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-divider"></div>
+    <h2>Comprehensive Care Management</h2>
+    <p>Care management isn't caregiving. While caregivers provide hands-on daily assistance, <strong>care managers</strong> are the professionals who oversee the full picture &mdash; coordinating medical care, evaluating living situations, advocating at appointments, and guiding families through difficult decisions.</p>
+    <p>At Caring with Grace, our team of certified Aging Life Care Professionals brings decades of experience with Alzheimer's, Parkinson's, Frontotemporal Dementia, and other complex conditions. We become your family's trusted partner and advocate.</p>
+    <div class="intro-highlight">
+      "Think of us as the expert in your corner &mdash; someone who knows the system, asks the right questions, and makes sure your loved one gets the care they deserve."
+    </div>
+  </div>
+</section>
+
+<!-- ======================== HOW WE HELP ======================== -->
 <section class="services">
-  <h2>How We Help</h2>
-  <p>Comprehensive care management tailored to your family's unique needs.</p>
+  <div class="services-inner">
+    <h2>How We Help</h2>
+    <p>Comprehensive care management tailored to your family's unique needs.</p>
 
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Aging Life Care</h3>
+        <p>Holistic, client-centered approach to caring for older adults facing ongoing health challenges.</p>
       </div>
-      <h3>Aging Life Care</h3>
-      <p>Holistic, client-centered approach to caring for older adults facing ongoing health challenges.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Housing Guidance</h3>
+        <p>Evaluate and select appropriate housing or residential options for your loved one.</p>
       </div>
-      <h3>Housing Guidance</h3>
-      <p>Evaluate and select appropriate housing or residential options for your loved one.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Medical Advocacy</h3>
+        <p>Attend appointments and facilitate communication between doctor, client, and family.</p>
       </div>
-      <h3>Medical Advocacy</h3>
-      <p>Attend appointments and facilitate communication between doctor, client, and family.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Family Support</h3>
+        <p>Expert guidance to ease the burdens and challenges of caregiving for your entire family.</p>
       </div>
-      <h3>Family Support</h3>
-      <p>Expert guidance to ease the burdens and challenges of caregiving for your entire family.</p>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Crisis Intervention</h3>
+        <p>Immediate professional response when your family faces an urgent care situation.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>Care Planning</h3>
+        <p>Develop comprehensive, personalized plans that address medical, social, and emotional needs.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ======================== ABOUT ======================== -->
-<section class="about-section">
-  <div class="about-inner">
-    <div class="about-text">
-      <h2>Compassionate Care Since 2006</h2>
-      <p>Caring with Grace was founded in Dallas to assist seniors, adults with disabilities, and their families as they navigate the challenges of aging.</p>
-      <p>Our care managers bring extensive experience with Alzheimer's, Parkinson's, Frontotemporal Dementia, and other neurocognitive conditions. We work alongside your family to provide expertise during times of uncertainty.</p>
-      <p style="margin-top: 8px;">
-        <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">Learn more about our team &rarr;</a>
-      </p>
-    </div>
-    <div class="about-image">
-      [ Photo placeholder ]
-    </div>
+<!-- ======================== CONTACT FORM ======================== -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2>Get in Touch</h2>
+    <p>Reach out for a free initial consultation. We're here to help your family find the right path forward.</p>
+
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" placeholder="(214) 555-0100">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inquiry-type">How can we help?</label>
+        <select id="inquiry-type">
+          <option value="">Select a topic...</option>
+          <option>I need care management for a loved one</option>
+          <option>I'm looking for caregiver services</option>
+          <option>I have questions about your services</option>
+          <option>I'd like to refer a client</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell us more</label>
+        <textarea id="message" placeholder="Share a little about your situation and how we can help..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
   </div>
-</section>
-
-<!-- ======================== QUOTE ======================== -->
-<section class="quote-section">
-  <blockquote>"They guided our family through one of the most difficult times of our lives with patience, expertise, and genuine compassion."</blockquote>
-  <cite>— A Dallas-area family</cite>
-</section>
-
-<!-- ======================== CTA ======================== -->
-<section class="cta-band">
-  <h2>Ready to talk?</h2>
-  <p>We're here to help your family find the right path forward. Reach out for a free initial consultation.</p>
-  <a href="#" class="cta-btn">Contact Us</a>
 </section>
 
 <!-- ======================== FOOTER ======================== -->
@@ -570,34 +739,34 @@ const palettes = {
     bodyFont: "'Lato', Arial, sans-serif"
   },
   d: {
-    name: 'Navy & Coral',
-    primary: '#4A6885',
-    primaryLight: '#F5F7FA',
-    primaryDark: '#36506B',
-    secondary: '#E08B6D',
-    secondaryLight: '#FBF0EB',
-    dark: '#1E2D3D',
-    light: '#F5F7FA',
-    text: '#1E2D3D',
-    textLight: '#4A5B6B',
-    border: '#D4DEE6',
+    name: 'Deep Teal & Raspberry',
+    primary: '#1A8A95',
+    primaryLight: '#E8F5F7',
+    primaryDark: '#127078',
+    secondary: '#C44B6C',
+    secondaryLight: '#F2D1DA',
+    dark: '#1A2A35',
+    light: '#E8F5F7',
+    text: '#1A2A35',
+    textLight: '#3E5565',
+    border: '#C8DEE2',
     headingFont: "'Playfair Display', Georgia, serif",
     bodyFont: "'Open Sans', Arial, sans-serif"
   },
   e: {
-    name: 'Plum & Honey',
-    primary: '#7B5E7B',
-    primaryLight: '#F8F4F8',
-    primaryDark: '#5E3E5E',
-    secondary: '#D4A853',
-    secondaryLight: '#F8F2E6',
-    dark: '#2E1E2E',
-    light: '#F8F4F8',
-    text: '#2E1E2E',
-    textLight: '#5E4A5E',
-    border: '#DDD4DD',
-    headingFont: "'Nunito', Verdana, sans-serif",
-    bodyFont: "'Nunito', Verdana, sans-serif"
+    name: 'Mist & Blush',
+    primary: '#8BABA8',
+    primaryLight: '#FAF8F5',
+    primaryDark: '#6A8B88',
+    secondary: '#C5A8A8',
+    secondaryLight: '#F0E8E8',
+    dark: '#4A4644',
+    light: '#FAF8F5',
+    text: '#4A4644',
+    textLight: '#7A7674',
+    border: '#D8D0C8',
+    headingFont: "'Cormorant Garamond', Garamond, serif",
+    bodyFont: "'Lato', Arial, sans-serif"
   }
 };
 
@@ -618,13 +787,18 @@ function setPalette(key) {
   r.setProperty('--body-font', p.bodyFont);
   document.body.style.fontFamily = p.bodyFont;
 
-  // Update heading fonts
-  document.querySelectorAll('.hero h1, .services h2, .about-text h2, .quote-section blockquote, .cta-band h2, .footer-brand h3, .site-logo-text, .service-card h3').forEach(el => {
+  // Update all heading fonts
+  document.querySelectorAll('.hero-content h1, .intro-section h2, .services h2, .contact-section h2, .footer-brand h3, .site-logo-text, .service-card h3').forEach(el => {
     el.style.fontFamily = p.headingFont;
   });
 
-  // Update body fonts
-  document.querySelectorAll('.hero p, .services > p, .service-card p, .about-text p, .quote-section cite, .cta-band p, .site-nav a, .hero-btn, .cta-btn').forEach(el => {
+  // Update all body fonts
+  document.querySelectorAll('.hero-content p, .intro-section p, .services-inner > p, .service-card p, .contact-inner > p, .site-nav a, .hero-play-btn, .form-submit, .hero-badge').forEach(el => {
+    el.style.fontFamily = p.bodyFont;
+  });
+
+  // Update form elements
+  document.querySelectorAll('.form-group input, .form-group select, .form-group textarea, .form-group label').forEach(el => {
     el.style.fontFamily = p.bodyFont;
   });
 
