@@ -138,6 +138,22 @@
       background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 60%, var(--secondary) 100%);
       opacity: 0.9;
     }
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.5) 100%);
+    }
     .hero-video-placeholder {
       position: absolute;
       inset: 0;
@@ -147,6 +163,7 @@
       flex-direction: column;
       gap: 12px;
       opacity: 0.2;
+      z-index: 0;
     }
     .hero-video-placeholder svg {
       width: 80px;
@@ -485,10 +502,10 @@
     <span class="switcher-dot" style="background: #7A9E7E;"></span> C. Sage & Rose
   </button>
   <button class="switcher-btn" onclick="setPalette('d')">
-    <span class="switcher-dot" style="background: #1A8A95;"></span> D. Deep Teal & Raspberry
+    <span class="switcher-dot" style="background: #9FD1D6;"></span> D. Current Site Refined
   </button>
   <button class="switcher-btn" onclick="setPalette('e')">
-    <span class="switcher-dot" style="background: #8BABA8;"></span> E. Mist & Blush
+    <span class="switcher-dot" style="background: #6EC4CE;"></span> E. Pastel Breeze
   </button>
 </div>
 
@@ -522,14 +539,10 @@
 
 <!-- ======================== HERO / VIDEO SECTION ======================== -->
 <section class="hero-video">
-  <div class="hero-video-bg"></div>
-  <!-- Video play icon placeholder -->
-  <div class="hero-video-placeholder">
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="2" y="2" width="20" height="20" rx="4" stroke="white" stroke-width="1.5"/>
-      <polygon points="9.5,7 17,12 9.5,17" fill="white"/>
-    </svg>
-    <span style="color: white; font-size: 0.85rem; font-family: 'Open Sans', sans-serif;">Explainer video will go here</span>
+  <!-- Header image background -->
+  <div class="hero-image">
+    <img src="stock-photos/01-family-consultation.jpg" alt="Family consultation with care manager">
+    <div class="hero-image-overlay"></div>
   </div>
   <div class="hero-content">
     <div class="hero-badge">Dallas-Fort Worth &bull; Since 2006</div>
@@ -739,34 +752,34 @@ const palettes = {
     bodyFont: "'Lato', Arial, sans-serif"
   },
   d: {
-    name: 'Deep Teal & Raspberry',
-    primary: '#1A8A95',
-    primaryLight: '#E8F5F7',
-    primaryDark: '#127078',
-    secondary: '#C44B6C',
-    secondaryLight: '#F2D1DA',
-    dark: '#1A2A35',
-    light: '#E8F5F7',
-    text: '#1A2A35',
-    textLight: '#3E5565',
-    border: '#C8DEE2',
+    name: 'Current Site Refined',
+    primary: '#9FD1D6',
+    primaryLight: '#F0F8F9',
+    primaryDark: '#6AAFB6',
+    secondary: '#D4849A',
+    secondaryLight: '#F5E0E6',
+    dark: '#2D2D2D',
+    light: '#F0F8F9',
+    text: '#2D2D2D',
+    textLight: '#5A5A5A',
+    border: '#D0E4E7',
     headingFont: "'Playfair Display', Georgia, serif",
     bodyFont: "'Open Sans', Arial, sans-serif"
   },
   e: {
-    name: 'Mist & Blush',
-    primary: '#8BABA8',
-    primaryLight: '#FAF8F5',
-    primaryDark: '#6A8B88',
-    secondary: '#C5A8A8',
-    secondaryLight: '#F0E8E8',
-    dark: '#4A4644',
-    light: '#FAF8F5',
-    text: '#4A4644',
-    textLight: '#7A7674',
-    border: '#D8D0C8',
-    headingFont: "'Cormorant Garamond', Garamond, serif",
-    bodyFont: "'Lato', Arial, sans-serif"
+    name: 'Pastel Breeze',
+    primary: '#6EC4CE',
+    primaryLight: '#F0FAFB',
+    primaryDark: '#4AA8B4',
+    secondary: '#E8A0B2',
+    secondaryLight: '#FDE4EC',
+    dark: '#3A4550',
+    light: '#F0FAFB',
+    text: '#3A4550',
+    textLight: '#5E6D78',
+    border: '#D0E6E9',
+    headingFont: "'Playfair Display', Georgia, serif",
+    bodyFont: "'Open Sans', Arial, sans-serif"
   }
 };
 
