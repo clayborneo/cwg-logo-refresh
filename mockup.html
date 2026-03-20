@@ -122,121 +122,137 @@
     }
     .site-nav a:hover { color: var(--primary); }
 
-    /* --- Hero / Video Section --- */
-    .hero-video {
+    /* --- Hero Carousel --- */
+    .hero-carousel {
       position: relative;
       background: var(--dark);
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      height: 560px;
       overflow: hidden;
     }
-    .hero-video-bg {
+    .carousel-slides {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .carousel-slide {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 60%, var(--secondary) 100%);
-      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+      pointer-events: none;
     }
-    .hero-image {
+    .carousel-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .carousel-slide-image {
       position: absolute;
       inset: 0;
-      z-index: 0;
     }
-    .hero-image img {
+    .carousel-slide-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 30%;
     }
-    .hero-image-overlay {
+    .carousel-slide-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.5) 100%);
+      background: linear-gradient(to right, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.25) 100%);
     }
-    .hero-video-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 12px;
-      opacity: 0.2;
-      z-index: 0;
-    }
-    .hero-video-placeholder svg {
-      width: 80px;
-      height: 80px;
-    }
-    .hero-content {
+    .carousel-slide-content {
       position: relative;
       z-index: 1;
-      text-align: center;
-      padding: 60px 40px;
-      max-width: 720px;
+      padding: 60px 60px 60px 80px;
+      max-width: 620px;
     }
-    .hero-content h1 {
+    .carousel-slide-number {
+      display: inline-block;
+      font-family: var(--body-font);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 14px;
+    }
+    .carousel-slide-content h2 {
       font-family: var(--heading-font);
-      font-size: 3rem;
+      font-size: 2.4rem;
       font-weight: 400;
       color: var(--white);
-      margin-bottom: 16px;
       line-height: 1.2;
+      margin-bottom: 16px;
     }
-    .hero-content p {
-      font-size: 1.15rem;
+    .carousel-slide-content p {
+      font-size: 1.1rem;
       color: rgba(255,255,255,0.85);
-      max-width: 560px;
-      margin: 0 auto 32px;
       line-height: 1.7;
+      max-width: 480px;
     }
-    .hero-play-btn {
-      display: inline-flex;
+
+    /* Carousel navigation */
+    .carousel-nav {
+      position: absolute;
+      bottom: 36px;
+      left: 80px;
+      z-index: 2;
+      display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 16px 36px;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255,255,255,0.4);
-      color: var(--white);
-      text-decoration: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-family: var(--body-font);
-      font-weight: 600;
-      transition: all 0.3s;
-      cursor: pointer;
+      gap: 12px;
     }
-    .hero-play-btn:hover {
-      background: rgba(255,255,255,0.25);
-      border-color: rgba(255,255,255,0.7);
-    }
-    .hero-play-icon {
-      width: 24px;
-      height: 24px;
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.5);
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s;
+      padding: 0;
+    }
+    .carousel-dot.active {
       background: var(--white);
+      border-color: var(--white);
+      width: 28px;
+      border-radius: 5px;
+    }
+    .carousel-arrows {
+      position: absolute;
+      bottom: 36px;
+      right: 60px;
+      z-index: 2;
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 1.1rem;
     }
-    .hero-play-icon svg {
-      width: 10px;
-      height: 12px;
-      margin-left: 2px;
+    .carousel-arrow:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: rgba(255,255,255,0.6);
     }
-    .hero-badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba(255,255,255,0.12);
-      border-radius: 20px;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.7);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-      font-family: var(--body-font);
+    .carousel-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      background: var(--secondary);
+      z-index: 2;
+      transition: width 0.3s ease;
     }
 
     /* --- Intro / Care Management Block --- */
@@ -537,26 +553,80 @@
   </ul>
 </header>
 
-<!-- ======================== HERO / VIDEO SECTION ======================== -->
-<section class="hero-video">
-  <!-- Header image background -->
-  <div class="hero-image">
-    <img src="stock-photos/02-hands-holding.jpg" alt="Caring hands gently holding — reassurance and connection">
-    <div class="hero-image-overlay"></div>
+<!-- ======================== HERO CAROUSEL ======================== -->
+<section class="hero-carousel">
+  <div class="carousel-slides">
+
+    <!-- Slide 1: What is Care Management? -->
+    <div class="carousel-slide active">
+      <div class="carousel-slide-image">
+        <img src="stock-photos/01-family-consultation.jpg" alt="Care manager meeting with a family to discuss a personalized care plan">
+        <div class="carousel-slide-overlay"></div>
+      </div>
+      <div class="carousel-slide-content">
+        <span class="carousel-slide-number">01 &mdash; What We Do</span>
+        <h2>Expert guidance for aging, illness &amp; disability</h2>
+        <p>Care management is the professional coordination of every aspect of your loved one's care &mdash; from medical needs to daily living &mdash; so families never have to navigate the system alone.</p>
+      </div>
+    </div>
+
+    <!-- Slide 2: Personalized Care Plans -->
+    <div class="carousel-slide">
+      <div class="carousel-slide-image">
+        <img src="stock-photos/08-home-assessment.jpg" alt="Care manager conducting a home safety assessment">
+        <div class="carousel-slide-overlay"></div>
+      </div>
+      <div class="carousel-slide-content">
+        <span class="carousel-slide-number">02 &mdash; Personalized Plans</span>
+        <h2>Tailored plans for your family's unique needs</h2>
+        <p>We assess your loved one's health, home safety, and personal goals to build a comprehensive care plan &mdash; one that adapts as needs change over time.</p>
+      </div>
+    </div>
+
+    <!-- Slide 3: Medical Advocacy -->
+    <div class="carousel-slide">
+      <div class="carousel-slide-image">
+        <img src="stock-photos/07-medical-advocacy.jpg" alt="Care manager advocating at a medical appointment">
+        <div class="carousel-slide-overlay"></div>
+      </div>
+      <div class="carousel-slide-content">
+        <span class="carousel-slide-number">03 &mdash; Medical Advocacy</span>
+        <h2>A knowledgeable voice at every appointment</h2>
+        <p>We attend doctor visits, ask the right questions, coordinate between specialists, and ensure nothing falls through the cracks &mdash; so your loved one gets the care they deserve.</p>
+      </div>
+    </div>
+
+    <!-- Slide 4: Family Peace of Mind -->
+    <div class="carousel-slide">
+      <div class="carousel-slide-image">
+        <img src="stock-photos/09-family-planning.jpg" alt="Family gathered together reviewing care options with a professional">
+        <div class="carousel-slide-overlay"></div>
+      </div>
+      <div class="carousel-slide-content">
+        <span class="carousel-slide-number">04 &mdash; Peace of Mind</span>
+        <h2>Families supported through every decision</h2>
+        <p>From crisis response to long-term planning, we walk alongside your family &mdash; providing clarity, reducing stress, and helping you feel confident that your loved one is in good hands.</p>
+      </div>
+    </div>
+
   </div>
-  <div class="hero-content">
-    <div class="hero-badge">Dallas-Fort Worth &bull; Since 2006</div>
-    <h1>Helping those you love live with dignity</h1>
-    <p>We're Aging Life Care professionals who guide families through the challenges of aging, illness, and disability with expert care management.</p>
-    <a class="hero-play-btn">
-      <span class="hero-play-icon">
-        <svg viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="1,0 12,7 1,14" fill="var(--primary)"/>
-        </svg>
-      </span>
-      Watch: What Is Care Management?
-    </a>
+
+  <!-- Navigation dots -->
+  <div class="carousel-nav">
+    <button class="carousel-dot active" data-slide="0"></button>
+    <button class="carousel-dot" data-slide="1"></button>
+    <button class="carousel-dot" data-slide="2"></button>
+    <button class="carousel-dot" data-slide="3"></button>
   </div>
+
+  <!-- Arrows -->
+  <div class="carousel-arrows">
+    <button class="carousel-arrow carousel-prev">&larr;</button>
+    <button class="carousel-arrow carousel-next">&rarr;</button>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="carousel-progress" style="width: 25%"></div>
 </section>
 
 <!-- ======================== INTRO / CARE MANAGEMENT ======================== -->
@@ -801,12 +871,12 @@ function setPalette(key) {
   document.body.style.fontFamily = p.bodyFont;
 
   // Update all heading fonts
-  document.querySelectorAll('.hero-content h1, .intro-section h2, .services h2, .contact-section h2, .footer-brand h3, .site-logo-text, .service-card h3').forEach(el => {
+  document.querySelectorAll('.carousel-slide-content h2, .intro-section h2, .services h2, .contact-section h2, .footer-brand h3, .site-logo-text, .service-card h3').forEach(el => {
     el.style.fontFamily = p.headingFont;
   });
 
   // Update all body fonts
-  document.querySelectorAll('.hero-content p, .intro-section p, .services-inner > p, .service-card p, .contact-inner > p, .site-nav a, .hero-play-btn, .form-submit, .hero-badge').forEach(el => {
+  document.querySelectorAll('.carousel-slide-content p, .carousel-slide-number, .intro-section p, .services-inner > p, .service-card p, .contact-inner > p, .site-nav a, .form-submit').forEach(el => {
     el.style.fontFamily = p.bodyFont;
   });
 
@@ -819,6 +889,46 @@ function setPalette(key) {
   document.querySelectorAll('.switcher-btn').forEach(btn => btn.classList.remove('active'));
   event.target.closest('.switcher-btn').classList.add('active');
 }
+
+// --- Carousel ---
+(function() {
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  const progress = document.querySelector('.carousel-progress');
+  const prevBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  let current = 0;
+  const total = slides.length;
+  const interval = 6000; // 6 seconds per slide
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + total) % total;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    progress.style.width = ((current + 1) / total * 100) + '%';
+    resetTimer();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, interval);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => goTo(parseInt(dot.dataset.slide)));
+  });
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
+  // Auto-advance
+  timer = setInterval(next, interval);
+})();
 </script>
 </body>
 </html>
