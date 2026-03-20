@@ -11,14 +11,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Default: Palette A */
-      --primary: #4A9EA8;
-      --primary-light: #F0F7F8;
-      --primary-dark: #357680;
-      --secondary: #D4899E;
-      --secondary-light: #F5E0E6;
+      /* Default: Palette A (Blue & Peony) */
+      --primary: #5B82B8;
+      --primary-light: #EEF2F8;
+      --primary-dark: #3E6090;
+      --secondary: #E898B0;
+      --secondary-light: #F8E0E8;
       --dark: #2C3E50;
-      --light: #F0F7F8;
+      --light: #EEF2F8;
       --accent-light: #E8F4F6;
       --white: #FFFFFF;
       --text: #2C3E50;
@@ -493,7 +493,7 @@
   <a href="index.html" class="back-link">&larr; Back to exploration</a>
   <span class="switcher-label">Switch palette:</span>
   <button class="switcher-btn active" onclick="setPalette('a')">
-    <span class="switcher-dot" style="background: #4A9EA8;"></span> A. Teal & Blush
+    <span class="switcher-dot" style="background: #5B82B8;"></span> A. Blue & Peony
   </button>
   <button class="switcher-btn" onclick="setPalette('b')">
     <span class="switcher-dot" style="background: #C17C8E;"></span> B. Rose & Gold
@@ -502,10 +502,10 @@
     <span class="switcher-dot" style="background: #7A9E7E;"></span> C. Sage & Rose
   </button>
   <button class="switcher-btn" onclick="setPalette('d')">
-    <span class="switcher-dot" style="background: #9FD1D6;"></span> D. Current Site Refined
+    <span class="switcher-dot" style="background: #8E80B8;"></span> D. Lavender & Pink
   </button>
   <button class="switcher-btn" onclick="setPalette('e')">
-    <span class="switcher-dot" style="background: #6EC4CE;"></span> E. Pastel Breeze
+    <span class="switcher-dot" style="background: #6AA0CC;"></span> E. Soft Sky & Rose
   </button>
 </div>
 
@@ -707,17 +707,17 @@
 <script>
 const palettes = {
   a: {
-    name: 'Teal & Blush',
-    primary: '#4A9EA8',
-    primaryLight: '#F0F7F8',
-    primaryDark: '#357680',
-    secondary: '#D4899E',
-    secondaryLight: '#F5E0E6',
+    name: 'Blue & Peony',
+    primary: '#5B82B8',
+    primaryLight: '#EEF2F8',
+    primaryDark: '#3E6090',
+    secondary: '#E898B0',
+    secondaryLight: '#F8E0E8',
     dark: '#2C3E50',
-    light: '#F0F7F8',
+    light: '#EEF2F8',
     text: '#2C3E50',
     textLight: '#5A6C7E',
-    border: '#D8E8EB',
+    border: '#D0D8E8',
     headingFont: "'Playfair Display', Georgia, serif",
     bodyFont: "'Open Sans', Arial, sans-serif"
   },
@@ -752,32 +752,32 @@ const palettes = {
     bodyFont: "'Lato', Arial, sans-serif"
   },
   d: {
-    name: 'Current Site Refined',
-    primary: '#9FD1D6',
-    primaryLight: '#F0F8F9',
-    primaryDark: '#6AAFB6',
-    secondary: '#D4849A',
-    secondaryLight: '#F5E0E6',
-    dark: '#2D2D2D',
-    light: '#F0F8F9',
-    text: '#2D2D2D',
-    textLight: '#5A5A5A',
-    border: '#D0E4E7',
+    name: 'Lavender & Pink',
+    primary: '#8E80B8',
+    primaryLight: '#F0E8F4',
+    primaryDark: '#6A5E90',
+    secondary: '#E898B0',
+    secondaryLight: '#F8E0E8',
+    dark: '#2E2840',
+    light: '#F0E8F4',
+    text: '#2E2840',
+    textLight: '#5A4E68',
+    border: '#D8CCE0',
     headingFont: "'Playfair Display', Georgia, serif",
     bodyFont: "'Open Sans', Arial, sans-serif"
   },
   e: {
-    name: 'Pastel Breeze',
-    primary: '#6EC4CE',
-    primaryLight: '#F0FAFB',
-    primaryDark: '#4AA8B4',
+    name: 'Soft Sky & Rose',
+    primary: '#6AA0CC',
+    primaryLight: '#EDF4FA',
+    primaryDark: '#4880A8',
     secondary: '#E8A0B2',
     secondaryLight: '#FDE4EC',
-    dark: '#3A4550',
-    light: '#F0FAFB',
-    text: '#3A4550',
-    textLight: '#5E6D78',
-    border: '#D0E6E9',
+    dark: '#2E3848',
+    light: '#EDF4FA',
+    text: '#2E3848',
+    textLight: '#506070',
+    border: '#C8D8E8',
     headingFont: "'Playfair Display', Georgia, serif",
     bodyFont: "'Open Sans', Arial, sans-serif"
   }
